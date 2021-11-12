@@ -1,24 +1,34 @@
 .main-article-template {
+  position: relative;
   overflow-x: hidden;
   overflow-y: hidden;
+
+  img {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 10;
+  }
 }
 
 section {
-  width: 600vw;
   height: 100vh;
   background-image: url(/assets/bg.jpg);
 }
 
 article {
-  height: 40vh;
   width: 100vw;
 }
 
 .article-slider {
   display: flex;
   height: 40vh;
-  width: 500vw;
+  width: max-content;
   margin-left: 100vw;
+  z-index: 20;
+  position: relative;
 
   .article-title {
     background-color: gray;
@@ -29,7 +39,7 @@ article {
 
   .article-content {
     background-color: beige;
-    width: 50vw;
+    width: 500px;
     height: 100%;
   }
 }

@@ -6,18 +6,26 @@
 }
 
 .main-article-template {
+  position: relative;
   overflow-x: hidden;
   overflow-y: hidden;
 }
 
+.main-article-template img {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 10;
+}
+
 section {
-  width: 600vw;
   height: 100vh;
   background-image: url(/assets/bg.jpg);
 }
 
 article {
-  height: 40vh;
   width: 100vw;
 }
 
@@ -26,8 +34,12 @@ article {
   display: -ms-flexbox;
   display: flex;
   height: 40vh;
-  width: 500vw;
+  width: -webkit-max-content;
+  width: -moz-max-content;
+  width: max-content;
   margin-left: 100vw;
+  z-index: 20;
+  position: relative;
 }
 
 .article-slider .article-title {
@@ -40,7 +52,7 @@ article {
 
 .article-slider .article-content {
   background-color: beige;
-  width: 50vw;
+  width: 500px;
   height: 100%;
 }
 
