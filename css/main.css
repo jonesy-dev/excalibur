@@ -5,10 +5,18 @@
           box-sizing: border-box;
 }
 
+body {
+  height: 100vh;
+  overflow-y: hidden;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
 .main-article-template {
   position: relative;
-  overflow-x: hidden;
-  overflow-y: hidden;
+  height: 100%;
 }
 
 .main-article-template img {
@@ -21,7 +29,7 @@
 }
 
 section {
-  height: 100vh;
+  height: 100%;
   background-image: url(/assets/bg.jpg);
 }
 
@@ -33,11 +41,11 @@ article {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 40vh;
+  height: 50vh;
   width: -webkit-max-content;
   width: -moz-max-content;
   width: max-content;
-  margin-left: 100vw;
+  margin-left: 100%;
   z-index: 20;
   position: relative;
 }
@@ -46,8 +54,6 @@ article {
   background-color: gray;
   width: 100px;
   height: 100%;
-  position: -webkit-sticky;
-  position: sticky;
 }
 
 .article-slider .article-content {
