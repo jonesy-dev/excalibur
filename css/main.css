@@ -5,6 +5,11 @@
           box-sizing: border-box;
 }
 
+html,
+body {
+  scroll-behavior: smooth;
+}
+
 body {
   height: 100vh;
   overflow-y: hidden;
@@ -54,12 +59,17 @@ article {
   background-color: gray;
   width: 100px;
   height: 100%;
+  z-index: 50;
 }
 
 .article-slider .article-content {
   background-color: beige;
   width: 500px;
   height: 100%;
+}
+
+.article-slider .article-content:last-of-type {
+  margin-right: 800px;
 }
 
 .section-title {
