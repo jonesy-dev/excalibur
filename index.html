@@ -4,12 +4,33 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://use.typekit.net/zfs4nqr.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@animxyz/core" />
+
     <link rel="stylesheet" href="css/main.css" />
     <title>Rollespilklubben i Viborg | Excalibur</title>
   </head>
-  <body>
-    <h1 style="text-align: center">Hello World</h1>
-    <a href="arrangement.html" style="font-size: 25px; text-align: center; display: block; color: #000">Arrangement</a>
+  <body onload="intro()">
+    <main id="landingPage">
+      <div id="mapWrap">
+        <img id="mapImg" src="assets/index/map-wBorder.jpg" alt="" />
+        <nav id="navWrap" xyz="fade-100% ease-in stagger-10 duration-20">
+          <a href="pages/arrangement.html" id="town-1" class="townLinks">Arrangementer</a>
+          <a href="#" id="town-2" class="townLinks">Bliv medlem</a>
+          <a href="#" id="town-3" class="townLinks">Nyheder</a>
+          <a href="#" id="town-4" class="townLinks">Forældre info</a>
+          <a href="#" id="town-5" class="townLinks">Kontakt</a>
+          <a href="#" id="town-6" class="townLinks">Galleri</a>
+          <a href="#" id="town-7" class="townLinks">Medlemslogin</a>
+        </nav>
+        <img id="logoMain" xyz="fade-100% ease-in duration-15" src="assets/index/logo-V2.svg" alt="" />
+      </div>
+    </main>
+    <div id="transInt" xyz="fade-100% ease-out duration-30"></div>
+    <audio id="audioInt" src="assets/index/shireStart.mp3" preload="auto"></audio>
+    <img id="logo" class="xyz-in" xyz="fade-100% in-small-25% out-big-100% out-rotate-left-1 duration-30 ease-out" src="assets/index/logo-light-V2.svg" alt="" />
+
+    <!-- js files -->
     <script src="js/index.js"></script>
   </body>
 </html>
