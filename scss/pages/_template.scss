@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
+
 html,
 body {
   scroll-behavior: smooth;
@@ -6,6 +8,7 @@ body {
 body {
   height: 100vh;
   overflow-y: hidden;
+  font-family: 'Fira Sans', sans-serif;;
   
 
   &::-webkit-scrollbar {
@@ -48,6 +51,8 @@ article {
     background-color: gray;
     width: 100px;
     height: 100%;
+    font-family: jaf-herb, serif;
+    font-size: 30px;
     // opacity: 1;
     // transition: opacity 400ms ease-out;
     // position: sticky;
