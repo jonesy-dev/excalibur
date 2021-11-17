@@ -1,0 +1,163 @@
+body {
+  overflow: hidden;
+  user-select: none;
+  display: grid;
+  grid-template-areas: "main";
+}
+
+#landingPage {
+  grid-area: main;
+  width: 100vw;
+  height: 100vh;
+
+  #mapWrap {
+    width: 100%;
+    height: 100%;
+    display: grid;
+    grid-template-columns: 6vw 88vw 6vw;
+    grid-template-rows: 7vh 86vh 7vh;
+
+    #navWrap {
+      grid-area: 2/2/3/3;
+      display: grid;
+      grid-template-columns: repeat(6, 1fr);
+      grid-template-rows: repeat(7, 1fr);
+
+      #pathWrap {
+        display: none;
+        grid-area: 1/1/-1/-1;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+      }
+
+      #scrollPrompt {
+        display: none;
+        grid-area: 7/6/8/7;
+        place-self: center;
+        font-family: fira-sans, sans-serif;
+        font-size: 2.5rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        background-color: rgba(144, 238, 144, 0.644);
+        padding: 0.8rem 1.5rem;
+        color: #1a1c1a;
+        border: 4px solid green;
+        box-shadow: 0.5rem 0.5rem 1.5rem #1a1c1a;
+      }
+
+      .townLinks {
+        display: none;
+        text-decoration: none;
+        font-family: jaf-herb, serif;
+        letter-spacing: 0.4rem;
+        font-size: 2vw;
+        color: #1d301d;
+        place-self: center;
+        text-transform: uppercase;
+        background-color: #1a1c1a10;
+        border-radius: 1.5rem;
+        padding: 0 0.9rem;
+        white-space: nowrap;
+        z-index: 2;
+        backdrop-filter: blur(1px);
+      }
+
+      #town-1 {
+        grid-area: 1/1/2/2;
+      }
+      #town-2 {
+        grid-area: 3/2/4/3;
+      }
+      #town-3 {
+        grid-area: 5/2/6/3;
+        justify-self: flex-end;
+      }
+      #town-4 {
+        grid-area: 7/3/8/4;
+        justify-self: flex-end;
+      }
+      #town-5 {
+        grid-area: 4/4/5/5;
+      }
+      #town-6 {
+        grid-area: 2/5/3/6;
+      }
+      #town-7 {
+        grid-area: 5/6/6/7;
+      }
+    }
+
+    #logoMain {
+      display: none;
+      width: 20rem;
+      position: absolute;
+      bottom: 5%;
+      left: 5%;
+      filter: drop-shadow(5px 5px 10px #1a1c1a);
+      cursor: pointer;
+
+      &:hover {
+        filter: saturate(250%) drop-shadow(5px 5px 10px #1a1c1a);
+        transform: scale(101%);
+      }
+    }
+  }
+}
+
+#skipBtn {
+  grid-area: main;
+  display: flex;
+  font-size: 4rem;
+  z-index: 3;
+  justify-self: flex-end;
+  align-self: flex-start;
+  margin: 2rem;
+  filter: grayscale(100%);
+  cursor: pointer;
+  transition: 0.3s;
+  white-space: nowrap;
+
+  &:hover {
+    filter: grayscale(30%);
+  }
+
+  &:active {
+    filter: grayscale(80%);
+  }
+}
+
+#transInt {
+  grid-area: main;
+  width: 100vw;
+  height: 100vh;
+  z-index: 2;
+  background: radial-gradient(circle, rgba(37, 47, 51, 1) 0%, rgba(26, 28, 26, 1) 69%);
+}
+
+#logo {
+  display: block;
+  z-index: 2;
+  position: absolute;
+  top: 20%;
+  left: 40%;
+  height: 60vh;
+  filter: grayscale(100%);
+}
+
+.shine {
+  display: inline-block;
+  background-repeat: no-repeat;
+  mask: linear-gradient(-80deg, #000 30%, #0005, #000 70%) right/300% 100%;
+  animation: shine 1.4s;
+}
+
+#audioInt {
+  display: none;
+}
+
+@keyframes shine {
+  100% {
+    mask-position: left;
+  }
+}
