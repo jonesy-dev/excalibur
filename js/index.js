@@ -1,8 +1,14 @@
+// declaring variables
+
 let theShire = document.querySelector("#audioInt");
 let logo = document.querySelector("#logo");
 let transInt = document.querySelector("#transInt");
 let townLinks = document.getElementsByClassName("townLinks");
 let logoMain = document.querySelector("#logoMain");
+let scrollPrompt = document.querySelector("#scrollPrompt");
+let skipBtn = document.querySelector("#skipBtn");
+
+// calling functions
 
 function intro() {
   setTimeout(function () {
@@ -37,4 +43,26 @@ function intro() {
     logoMain.style.display = "block";
     logoMain.classList.add("xyz-in");
   }, 22000);
+  setTimeout(function () {
+    scrollPrompt.classList.add("xyz-in");
+    scrollPrompt.style.display = "block";
+  }, 26000);
+  setTimeout(function () {
+    scrollPrompt.classList.replace("xyz-in", "xyz-out");
+  }, 32000);
 }
+
+function skipIntro() {
+  skipBtn.style.display = "none";
+  theShire.pause();
+  logo.style.display = "none";
+  transInt.style.display = "none";
+  for (let i = 0; i < townLinks.length; i++) {
+    townLinks[i].style.display = "block";
+  }
+  logoMain.style.display = "block";
+}
+
+window.addEventListener("wheel", function (e) {
+  console.log(e.deltaY);
+});

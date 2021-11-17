@@ -15,6 +15,7 @@
       <div id="mapWrap">
         <img id="mapImg" src="assets/index/map-wBorder.jpg" alt="" />
         <nav id="navWrap" xyz="fade-100% ease-in stagger-10 duration-20">
+          <span id="scrollPrompt" xyz="fade-100% duration-10 ease-in">Scroll for at rejse</span>
           <a href="pages/arrangement.html" id="town-1" class="townLinks">Arrangementer</a>
           <a href="#" id="town-2" class="townLinks">Bliv medlem</a>
           <a href="#" id="town-3" class="townLinks">Nyheder</a>
@@ -22,15 +23,34 @@
           <a href="#" id="town-5" class="townLinks">Kontakt</a>
           <a href="#" id="town-6" class="townLinks">Galleri</a>
           <a href="#" id="town-7" class="townLinks">Medlemslogin</a>
+          <svg id="pathWrap" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1496.01 863.05">
+            <defs>
+              <style>
+                #pathLine {
+                  fill: none;
+                  stroke: #1d301d;
+                  stroke-linecap: round;
+                  stroke-linejoin: round;
+                  stroke-width: 6px;
+                }
+              </style>
+            </defs>
+            <path id="pathLine" d="M201.33,66.33l28.28,151.13a2.21,2.21,0,0,0,.08.35c6.24,21.9,32.59,54.83,58.09,73.4,8.45,6.15,62.19-11.39,96-20.89a62.07,62.07,0,0,1,45.75,4.83l78,41.13c.27.14,15.83,6.83,16.1,7,33.6,16.32,39.94,24.09,47.62,54.82L601,437a175,175,0,0,1,18.45,91.42c-.64,8.67.71,18.88,2.23,26.93a81.39,81.39,0,0,1-.15,31l-9.82,49.19a86.42,86.42,0,0,0,28,82.11h0a92.7,92.7,0,0,1,23.14,30.66,85.18,85.18,0,0,0,4.71,8.72C679.4,776.28,715.29,861,744.68,894.2c40.51,45.78,139.21,27.68,182.4,12.72,67-23.22,12.44-136.44,48.48-172.08,37.6-37.18,137.24-58.47,212.84-70.06,39.28-6,55.91-53.47,29-82.7l-45.49-57.77A62.47,62.47,0,0,1,1159,493.64c-4.73-36.74-9.07-73.52,11.41-84,72.24-37,101.81-109.18,101.81-109.18a3.31,3.31,0,0,1,.31-.66,83.85,83.85,0,0,1,70.27-41.22l124-2.89c40.85-.55,40.53,38,44,70.9a91.93,91.93,0,0,0,4.67,20.72A47.14,47.14,0,0,0,1544,375.89l60.94,22.17a82.65,82.65,0,0,1,29.55,18.43,167.27,167.27,0,0,1,27.12,34.67c18.85,32,55.58,36,1.41,104.33l-3,5.51" transform="translate(-198.33 -63.33)" />
+          </svg>
         </nav>
-        <img id="logoMain" xyz="fade-100% ease-in duration-15" src="assets/index/logo-V2.svg" alt="" />
+
+        <img id="logoMain" xyz="fade-100% ease-in duration-15" src="assets/index/logo-V2.svg" alt="" onclick="location.reload()" />
       </div>
     </main>
+    <div id="skipBtn" onclick="skipIntro()">&#9193;</div>
     <div id="transInt" xyz="fade-100% ease-out duration-30"></div>
     <audio id="audioInt" src="assets/index/shireStart.mp3" preload="auto"></audio>
     <img id="logo" class="xyz-in" xyz="fade-100% in-small-25% out-big-100% out-rotate-left-1 duration-30 ease-out" src="assets/index/logo-light-V2.svg" alt="" />
 
     <!-- js files -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.8.0/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap-drawsvg@1.0.0/drawsvgmin.min.js"></script>
     <script src="js/index.js"></script>
   </body>
 </html>
