@@ -1,5 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
-
+//font-family: 'Fira Sans', sans-serif;
+//font-family: jaf-herb, serif; 
 html,
 body {
   scroll-behavior: smooth;
@@ -8,7 +9,7 @@ body {
 body {
   height: 100vh;
   overflow-y: hidden;
-  font-family: 'Fira Sans', sans-serif;;
+  font-family: 'Fira Sans', sans-serif;
   
 
   &::-webkit-scrollbar {
@@ -46,6 +47,23 @@ article {
   margin-left: 100%;
   z-index: 20;
   position: relative;
+  padding-top: 2em;
+
+  .article-grid-box {
+    width: 600px;
+    height: 100%;
+    background-color: red;
+    position: sticky;
+    left: 20px;
+    z-index: 50;
+    display: grid;
+    grid-template-areas: 
+    "a1 a2 a3 a4 a5"
+    "b1 b2 b3 b4 b5"
+    "c1 c2 c3 c4 c5"
+    "d1 d2 d3 d4 d5"
+    "e1 e2 e3 e4 e5";
+  }
 
   .article-title {
     background-color: gray;
@@ -58,13 +76,13 @@ article {
     // position: sticky;
     // left: 0;
     // top: 0;
-    z-index: 50;
   }
 
   .article-content {
     background-color: beige;
     width: 500px;
     height: 100%;
+    margin-right: 2em;
     // opacity: 1;
     // transition: opacity 400ms ease-out;
 
@@ -84,8 +102,9 @@ article {
     margin-top: -2em;
     width: 100%;
     display: inline-block;
-
-    font-size: 5rem;
+    font-family: jaf-herb, serif;
+    font-size: 10rem;
+    letter-spacing: 0.3em;
   }
 
   p.subtitle {

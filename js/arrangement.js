@@ -10,12 +10,18 @@ const widthTitlePlusContent = document.querySelector(".article-title").offsetWid
 
 /********** FUNCTIONS **********/
 //Function that automatically add "article-title-" class for each element you add inside the ARTICLE-SLIDER to avoid repetion in the code and assign to that a property left
+var arrayLetters = ["a1", "a2", "a3", "a4", "a5", "b1", "b2", "b3", "b4", "b5", "c1", "c2", "c3", "c4", "c5", "d1", "d2", "d3", "d4", "d5", "e1", "e2", "e3", "e4", "e5"];
+for (i = 0; i <= arrayLetters.length; i++) {
+  document.querySelector(".article-grid-box").innerHTML = "arrayLetters[i]";
+}
+
 articleTitleArray.forEach((articleTitleSingle, i) => {
   i = 1 + i;
   articleTitleSingle.classList.add("article-title-" + i);
   articleTitleSingle.addEventListener("click", () => {
     window.scroll(articleSlider.offsetLeft - widthTitlePlusContent + widthTitlePlusContent * (i - 1), 0);
   });
+  // document.querySelector(".article-title-" + i).style.cssText = `opacity: 1; transition: opacity 400ms ease-out;`;
   document.querySelector(".article-title-" + i).style.opacity = 1;
   document.querySelector(".article-title-" + i).style.transition = "opacity 400ms ease-out";
 });
@@ -24,6 +30,7 @@ articleContentArray.forEach((articleContentSingle, i) => {
   i = 1 + i;
   articleContentSingle.classList.add("article-content-" + i);
   articleContentSingle.id = "article" + i;
+  // document.querySelector(".article-content-" + i).stylecssText = `opacity: 1; transition: opacity 400ms ease-out;`;
   document.querySelector(".article-content-" + i).style.opacity = 1;
   document.querySelector(".article-content-" + i).style.transition = "opacity 400ms ease-out";
 });
@@ -44,8 +51,9 @@ window.addEventListener("scroll", function () {
   for (let i = 1; i <= articleTitleArray.length; i++) {
     if (window.pageXOffset >= articleSlider.offsetLeft + (i - 1) * widthTitlePlusContent - articleContentSingle.offsetWidth) {
       document.querySelector(".article-content-" + i).style.opacity = 0;
-      document.querySelector(".article-title-" + i).style.height = articleSliderHeight / itemXCol + "px";
-      document.querySelector(".article-title-" + i).style.position = "sticky";
+      document.querySelector(".article-title-" + i).style.cssText = `height: ${articleSliderHeight / itemXCol + "px"}; position: sticky;`;
+      // document.querySelector(".article-title-" + i).style.height = articleSliderHeight / itemXCol + "px";
+      // document.querySelector(".article-title-" + i).style.position = "sticky";
       if (i <= itemXCol) {
         document.querySelector(".article-title-" + i).style.left = 0;
         document.querySelector(".article-title-" + i).style.top = ((i - 1) * articleSliderHeight) / itemXCol + "px";
@@ -60,6 +68,7 @@ window.addEventListener("scroll", function () {
         document.querySelector(".article-title-" + i).style.top = ((i - itemXCol * 3 - 1) * articleSliderHeight) / itemXCol + "px";
       }
     } else {
+      // document.querySelector(".article-content-" + i).style.cssText = `opacity: null; height: null; position: null; left: null; top: null;`;
       document.querySelector(".article-content-" + i).style.opacity = null;
       document.querySelector(".article-title-" + i).style.height = null;
       document.querySelector(".article-title-" + i).style.position = null;
@@ -69,6 +78,8 @@ window.addEventListener("scroll", function () {
   }
 });
 
+/* Grid-box SETUP */
+
 /********** EXTERNAL FUNCTIONS **********/
 //Important no overflow on Y axis
 document.addEventListener("wheel", function (e) {
@@ -76,11 +87,13 @@ document.addEventListener("wheel", function (e) {
     return;
   }
   let delta = (e.deltaY || -e.wheelDelta || e.detail) >> 10 || 1;
-  delta = delta * -300;
+  if (window.pageXOffset <= document.querySelector("article").offsetWidth) {
+    delta = delta * -(document.querySelector("article").offsetWidth / 3);
+  } else {
+    delta = delta * -600;
+  }
   document.documentElement.scrollLeft -= delta;
   // safari needs also this
   document.body.scrollLeft -= delta;
   e.preventDefault();
 });
-
-
