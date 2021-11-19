@@ -13,9 +13,9 @@ wheel();
 
 //loop that create cells inside the article-grid-box and place the name of each article-title inside
 function boxCells() {
-  document.querySelector(".article-grid-box").innerHTML += `<div class="article-grid-box-cell active-cell">${articleTitleArray[0].innerText}</div>`;
+  document.querySelector(".article-grid-box").innerHTML += `<div class="article-grid-box-cell active-cell">${articleTitleArray[0].innerHTML}</div>`;
   for (i = 1; i < articleTitleArray.length; i++) {
-    document.querySelector(".article-grid-box").innerHTML += `<div class="article-grid-box-cell">${articleTitleArray[i].innerText}</div>`;
+    document.querySelector(".article-grid-box").innerHTML += `<div class="article-grid-box-cell">${articleTitleArray[i].innerHTML}</div>`;
   }
   // const articleGridBoxCellSingle = document.querySelector(".article-grid-box-cell");
   const articleGridBoxCellArray = document.querySelectorAll(".article-grid-box-cell");
