@@ -9,6 +9,8 @@ const widthArticleBoxPlusMargin = document.querySelector(".article-box").offsetW
 
 /********** FUNCTIONS **********/
 boxCells();
+wheel();
+
 //loop that create cells inside the article-grid-box and place the name of each article-title inside
 function boxCells() {
   document.querySelector(".article-grid-box").innerHTML += `<div class="article-grid-box-cell active-cell">${articleTitleArray[0].innerText}</div>`;
@@ -28,7 +30,6 @@ function boxCells() {
 section.style.width = section.scrollWidth + "px";
 
 //Slide Event
-console.log(articleBoxArray.length - 1);
 window.addEventListener("scroll", function () {
   for (let i = 0; i < articleBoxArray.length; i++) {
     if (window.pageXOffset <= articleSlider.offsetLeft + 0 * widthArticleBoxPlusMargin) {
@@ -68,22 +69,24 @@ window.addEventListener("scroll", function () {
 
 /********** EXTERNAL FUNCTIONS **********/
 //Important no overflow on Y axis
-document.addEventListener("wheel", function (e) {
-  if (e.type != "wheel") {
-    return;
-  }
-  let delta = (e.deltaY || -e.wheelDelta || e.detail) >> 10 || 1;
-  if (window.pageXOffset < article.offsetWidth) {
-    delta = delta * -article.offsetWidth;
-  } else {
-    delta = delta * -widthArticleBoxPlusMargin;
-  }
-  // delta = delta * -600;
-  document.documentElement.scrollLeft -= delta;
-  // safari needs also this
-  document.body.scrollLeft -= delta;
-  // e.preventDefault();
-});
+function wheel() {
+  document.addEventListener("wheel", function (e) {
+    if (e.type != "wheel") {
+      return;
+    }
+    let delta = (e.deltaY || -e.wheelDelta || e.detail) >> 10 || 1;
+    if (window.pageXOffset < article.offsetWidth) {
+      delta = delta * -article.offsetWidth;
+    } else {
+      delta = delta * -widthArticleBoxPlusMargin;
+    }
+    // delta = delta * -600;
+    document.documentElement.scrollLeft -= delta;
+    // safari needs also this
+    document.body.scrollLeft -= delta;
+    // e.preventDefault();
+  });
+}
 
 // // /* WIDTH CALCULATOR */
 // window.addEventListener("scroll", function () {
