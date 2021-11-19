@@ -36,7 +36,7 @@ window.addEventListener("scroll", function () {
       articleBoxArray[0].classList.add("active");
       articleBoxArray[0 + 1].classList.add("active-next");
     }
-    if (window.pageXOffset > articleSlider.offsetLeft + i * widthArticleBoxPlusMargin) {
+    if (window.pageXOffset > (articleSlider.offsetLeft + 50) + i * widthArticleBoxPlusMargin) {
       articleBoxArray[i].classList.remove("active");
       articleBoxArray[i + 1].classList.add("active");
       articleBoxArray[i + 1].classList.remove("active-next");
@@ -75,6 +75,7 @@ function wheel() {
       return;
     }
     let delta = (e.deltaY || -e.wheelDelta || e.detail) >> 10 || 1;
+    
     if (window.pageXOffset < article.offsetWidth) {
       delta = delta * -article.offsetWidth;
     } else {
@@ -91,4 +92,12 @@ function wheel() {
 // // /* WIDTH CALCULATOR */
 // window.addEventListener("scroll", function () {
 //   console.log(window.pageXOffset);
+// });
+
+// var scrollTimeout = null;
+// window.scroll(function () {
+//   if (scrollTimeout) clearTimeout(scrollTimeout);
+//   scrollTimeout = setTimeout(function () {
+//     wheel();
+//   }, 500);
 // });
