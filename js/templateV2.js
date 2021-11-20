@@ -52,22 +52,22 @@ window.addEventListener("scroll", function () {
   for (let i = 0; i < articleBoxArray.length; i++) {
     if (window.pageXOffset <= section.offsetWidth) {
       articleBoxArray[0].classList.add("active");
-      articleBoxArray[0 + 1].classList.add("active-next");
+      // articleBoxArray[0 + 1].classList.add("active-next");
     }
     if (window.pageXOffset > section.offsetWidth * (i + 1)) {
       articleBoxArray[i].classList.remove("active");
       articleBoxArray[i + 1].classList.add("active");
-      articleBoxArray[i + 1].classList.remove("active-next");
-      if (articleBoxArray[i + 2] != undefined) {
-        articleBoxArray[i + 2].classList.add("active-next");
-      }
+      // articleBoxArray[i + 1].classList.remove("active-next");
+      // if (articleBoxArray[i + 2] != undefined) {
+      //   articleBoxArray[i + 2].classList.add("active-next");
+      // }
     } else {
       if (articleBoxArray[i + 1] != undefined) {
         articleBoxArray[i + 1].classList.remove("active");
       }
-      if (articleBoxArray[i + 2] != undefined) {
-        articleBoxArray[i + 2].classList.remove("active-next");
-      }
+      // if (articleBoxArray[i + 2] != undefined) {
+      //   articleBoxArray[i + 2].classList.remove("active-next");
+      // }
     }
   }
 });

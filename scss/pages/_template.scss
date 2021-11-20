@@ -158,32 +158,30 @@ body {
     }
 
     .article-box {
-      width: 45%;
+      width: 800px;
       box-shadow: inset rgb(117, 90, 68) 0px 0px 100px 10px;
       border-radius: 3px;
       background-color: rgba(214, 184, 102, 1);
       opacity: 0;
       transition: opacity 200ms ease-out;
       margin: 0 auto;
-      height: fit-content;
-      min-height: 50%;
+      height: 50%;
       margin-top: 20px;
       padding: 10px 30px;
+      overflow: hidden;
 
       &.active {
         opacity: 1;
-        
       }
 
-      &.active-next {
-        opacity: 0.3;
-        margin-left: -800px;
+      .article-image {
+        height: 100%;
       }
 
        img {
         width: 100%;
         height: 100%;
-        object-fit: cover;
+        object-fit: contain;
       }
 
       .article-title {
