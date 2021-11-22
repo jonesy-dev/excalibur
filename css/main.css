@@ -5,11 +5,6 @@
   box-sizing: border-box;
 }
 
-html,
-body {
-  scroll-behavior: smooth;
-}
-
 html {
   font-size: 62.5%;
 }
@@ -22,7 +17,6 @@ body {
           user-select: none;
   display: grid;
   grid-template-areas: "main";
-  height: 100vh;
 }
 
 #landingPage {
@@ -44,18 +38,38 @@ body {
   grid-template-rows: repeat(7, 1fr);
 }
 #landingPage #mapWrap #navWrap #pathWrap {
-  display: none;
+  opacity: 1;
   grid-area: 1/1/-1/-1;
   width: 100%;
   height: 100%;
-  z-index: 1;
+  z-index: 3;
+}
+#landingPage #mapWrap #navWrap #pathWrap #pathLine {
+  opacity: 0;
+  filter: drop-shadow(3px 3px 5px #1a1c1a);
+  fill: none;
+  stroke: #887f60;
+  stroke-linecap: square;
+  stroke-width: 10px;
+}
+#landingPage #mapWrap #navWrap #pathWrap .b {
+  visibility: hidden;
+}
+#landingPage #mapWrap #navWrap #pathStart {
+  grid-area: 3/1/4/2;
+  margin-left: 4rem;
+  width: 7rem;
+  z-index: 7;
+}
+#landingPage #mapWrap #navWrap #pathStart #mapMark {
+  fill: #1d301d;
 }
 #landingPage #mapWrap #navWrap #scrollPrompt {
   display: none;
   grid-area: 7/6/8/7;
   place-self: center;
-  font-family: fira-sans, sans-serif;
-  font-size: 2.5rem;
+  font-family: "Jetbrains Mono", monospace;
+  font-size: 2rem;
   font-weight: 700;
   text-transform: uppercase;
   background-color: rgba(144, 238, 144, 0.644);
@@ -74,12 +88,21 @@ body {
   place-self: center;
   text-transform: uppercase;
   background-color: #1a1c1a10;
-  border-radius: 1.5rem;
-  padding: 0 0.9rem;
+  border-radius: 0.5rem;
+  padding: 0 2rem;
   white-space: nowrap;
-  z-index: 2;
-  -webkit-backdrop-filter: blur(1px);
-          backdrop-filter: blur(1px);
+  z-index: 6;
+  -webkit-backdrop-filter: blur(2px);
+          backdrop-filter: blur(2px);
+  transition: all 0.3s ease-in-out;
+}
+#landingPage #mapWrap #navWrap .townLinks:hover {
+  background-color: #1d301d;
+  color: #93833e;
+}
+#landingPage #mapWrap #navWrap .townLinksActive {
+  background-color: #1d301d;
+  color: #93833e;
 }
 #landingPage #mapWrap #navWrap #town-1 {
   grid-area: 1/1/2/2;
@@ -103,9 +126,44 @@ body {
 }
 #landingPage #mapWrap #navWrap #town-7 {
   grid-area: 5/6/6/7;
+  align-self: flex-start;
+}
+#landingPage #mapWrap #navWrap .flags {
+  position: absolute;
+  opacity: 0;
+  z-index: 5;
+}
+#landingPage #mapWrap #navWrap #flag-1 {
+  top: 0%;
+  left: 11%;
+}
+#landingPage #mapWrap #navWrap #flag-2 {
+  top: 24.5%;
+  left: 29%;
+}
+#landingPage #mapWrap #navWrap #flag-3 {
+  top: 49%;
+  left: 32%;
+}
+#landingPage #mapWrap #navWrap #flag-4 {
+  top: 74%;
+  left: 46%;
+}
+#landingPage #mapWrap #navWrap #flag-5 {
+  top: 37%;
+  left: 60%;
+}
+#landingPage #mapWrap #navWrap #flag-6 {
+  top: 12%;
+  left: 71%;
+}
+#landingPage #mapWrap #navWrap #flag-7 {
+  top: 45%;
+  left: 84%;
 }
 #landingPage #mapWrap #logoMain {
   display: none;
+  z-index: 6;
   width: 20rem;
   position: absolute;
   bottom: 5%;
@@ -117,12 +175,25 @@ body {
   filter: saturate(250%) drop-shadow(5px 5px 10px #1a1c1a);
   transform: scale(101%);
 }
+#landingPage #mapWrap #logoMain:active {
+  -webkit-animation: logoSpin 1s ease-in;
+          animation: logoSpin 1s ease-in;
+}
+#landingPage #mapWrap #compass {
+  display: none;
+  position: absolute;
+  top: 5%;
+  right: 4%;
+  width: 23rem;
+  filter: drop-shadow(7px 7px 15px #1a1c1a) sepia(200%);
+  transform: rotate(15deg);
+}
 
 #skipBtn {
   grid-area: main;
   display: flex;
   font-size: 4rem;
-  z-index: 3;
+  z-index: 12;
   justify-self: flex-end;
   align-self: flex-start;
   margin: 2rem;
@@ -130,6 +201,7 @@ body {
   cursor: pointer;
   transition: 0.3s;
   white-space: nowrap;
+  opacity: 30%;
 }
 #skipBtn:hover {
   filter: grayscale(30%);
@@ -142,13 +214,13 @@ body {
   grid-area: main;
   width: 100vw;
   height: 100vh;
-  z-index: 2;
+  z-index: 10;
   background: radial-gradient(circle, #252f33 0%, #1a1c1a 69%);
 }
 
 #logo {
   display: block;
-  z-index: 2;
+  z-index: 10;
   position: absolute;
   top: 20%;
   left: 40%;
@@ -182,7 +254,38 @@ body {
             mask-position: left;
   }
 }
+@-webkit-keyframes logoSpin {
+  0% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(180deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+@keyframes logoSpin {
+  0% {
+    transform: rotateY(0deg);
+  }
+  50% {
+    transform: rotateY(180deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+html,
+body {
+  scroll-behavior: smooth;
+}
 
+body {
+  height: 100vh;
+  overflow-y: hidden;
+  font-family: "Fira Sans", sans-serif;
+}
 body::-webkit-scrollbar {
   display: none;
 }
@@ -190,9 +293,7 @@ body::-webkit-scrollbar {
 .main-article-template {
   position: relative;
   height: 100%;
-  font-family: 'Fira Sans', sans-serif;
 }
-
 .main-article-template img {
   position: fixed;
   top: 0;
@@ -234,7 +335,6 @@ article {
   width: 500px;
   height: 100%;
 }
-
 .article-slider .article-content:last-of-type {
   margin-right: 800px;
 }
