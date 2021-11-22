@@ -11,14 +11,14 @@ body {
   font-family: "Fira Sans", sans-serif;
 }
 
-.main-article-template {
+.galleri {
   position: relative;
   height: 100%;
 
   .knight {
     position: fixed;
     width: 20rem;
-    bottom: 8%;
+    bottom: 5%;
     left: 45%;
     animation-duration: 500ms;
     animation-timing-function: linear;
@@ -74,7 +74,8 @@ body {
       border-radius: 3px;
       box-shadow: inset #333 0px 0px 15px 3px;
       cursor: pointer;
-      transition: 400ms ease-in background-color;
+      filter: grayscale(100%);
+      transition: 400ms ease-in all;
 
       img {
         width: 100%;
@@ -83,12 +84,14 @@ body {
       &.active-cell {
         background-color: rgba(214, 184, 102, 1);
         box-shadow: inset #fff 0px 0px 15px 3px;
+        filter: grayscale(0%);
         // background-color: red;
       }
 
       &:hover {
         background-color: rgba(214, 184, 102, 1);
         box-shadow: inset #fff 0px 0px 15px 3px;
+        filter: grayscale(0%);
       }
     }
   }
@@ -131,17 +134,48 @@ body {
     display: flex;
     height: 100%;
 
-    .bg-img {
+    .bg-img-left {
       position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
+      top: 10%;
+      left: 35px;
+
+      iframe {
+        height: 300px;
+        isolation: isolate;
+        z-index: -1;
+        position: relative;
+
+        &::after {
+          content: "";
+          position: absolute;
+          inset: 0;
+        }
+      }
+    }
+
+    .bg-img-right {
+      position: fixed;
+      top: 10%;
+      right: 35px;
+
+      iframe {
+        height: 300px;
+        isolation: isolate;
+        z-index: -1;
+        position: relative;
+
+        &::after {
+          content: "";
+          position: absolute;
+          inset: 0;
+        }
+      }
     }
 
     section {
       height: 100%;
-      background-image: url(/assets/subpages/bg.jpg);
-      background-size: contain;
+      background-image: url(/assets/subpages/galleribg40.jpg);
+      background-size: cover;
       text-align: center;
       width: 100vw;
       display: grid;
@@ -166,7 +200,7 @@ body {
 
     .article-box {
       width: 45vw;
-      opacity: 0;  
+      opacity: 0;
       margin: 0 auto;
       height: 50%;
       margin-top: 20px;
@@ -196,6 +230,7 @@ body {
         width: 100%;
         height: 100%;
         object-fit: contain;
+        border: 20px rgb(185, 163, 37) solid;
       }
 
       .article-title {
