@@ -137,11 +137,16 @@ function skipIntro() {
 }
 
 // logo on map action
-function logoReload() {
+window.transPage = function (href) {
+  document.querySelector("body").style.opacity = 0;
   setTimeout(function () {
-    location.reload();
+    window.location.href = href;
   }, 1500);
-}
+};
+
+document.addEventListener("DOMContentLoaded", function (event) {
+  document.querySelector("body").style.opacity = 1;
+});
 
 // scrolly time
 window.addEventListener(
