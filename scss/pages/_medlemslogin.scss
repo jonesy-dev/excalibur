@@ -1,0 +1,226 @@
+@import url("https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap");
+//font-family: 'Fira Sans', sans-serif;
+//font-family: jaf-herb, serif;
+html,
+body {
+  scroll-behavior: smooth;
+}
+
+body {
+  height: 100vh;
+  font-family: "Fira Sans", sans-serif;
+}
+
+.medlemslogin {
+  position: relative;
+  height: 100%;
+
+  .knight {
+    position: fixed;
+    width: 20rem;
+    bottom: 8%;
+    left: 45%;
+    animation-duration: 500ms;
+    animation-timing-function: linear;
+  }
+
+  @keyframes animRotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+
+  @keyframes revAnimRotate {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(-360deg);
+    }
+  }
+
+  .article-grid-box {
+    width: 23%;
+    height: 50%;
+    position: fixed;
+    top: 20px;
+    left: -50%;
+    z-index: 1;
+    display: grid;
+    font-family: jaf-herb, serif;
+    font-size: 30px;
+    grid-gap: 5px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+    opacity: 0;
+    transition: all 500ms cubic-bezier(0.6, -0.4, 0.36, 1.23);
+
+    &.show-grid-box {
+      opacity: 1;
+      left: 20px;
+    }
+
+    .article-grid-box-cell {
+      background-color: rgba(214, 184, 102, 0.7);
+      width: 100%;
+      height: 100%;
+      padding: 0 15px;
+      text-align: center;
+      display: grid;
+      place-content: center;
+      border-radius: 3px;
+      box-shadow: inset #333 0px 0px 15px 3px;
+      cursor: pointer;
+      transition: 400ms ease-in background-color;
+
+      img {
+        width: 100%;
+      }
+
+      &.active-cell {
+        background-color: rgba(214, 184, 102, 1);
+        box-shadow: inset #fff 0px 0px 15px 3px;
+        // background-color: red;
+      }
+
+      &:hover {
+        background-color: rgba(214, 184, 102, 1);
+        box-shadow: inset #fff 0px 0px 15px 3px;
+      }
+    }
+  }
+
+  .logo-link {
+    position: fixed;
+    bottom: 5%;
+    left: 5%;
+    z-index: 1;
+
+    p {
+      position: absolute;
+      color: #f2f2f2;
+      font-family: jaf-herb, serif;
+      font-size: 40px;
+      white-space: nowrap;
+      letter-spacing: 0.5rem;
+      bottom: 100px;
+      opacity: 0;
+      transition: bottom 500ms ease-in 550ms, opacity 500ms ease-in 550ms;
+    }
+
+    .icon-img {
+      width: 20rem;
+      cursor: pointer;
+      filter: grayscale(100%);
+      transition: filter 200ms ease-in, transform 750ms cubic-bezier(0.6, -0.4, 0.36, 1.23) 300ms;
+    }
+  }
+  .logo-link:hover .icon-img {
+    transform: rotate(90deg);
+    filter: grayscale(0);
+  }
+  .logo-link:hover p {
+    bottom: 15px;
+    opacity: 1;
+  }
+
+  .section-wrapper {
+    display: flex;
+    height: 100%;
+
+    .bg-img {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+    }
+
+    section {
+      height: 100%;
+      background-image: url(/assets/subpages/bg.jpg);
+      background-size: contain;
+      text-align: center;
+      width: 100vw;
+      display: grid;
+      justify-content: center;
+
+      &.main {
+        align-content: center;
+
+        h2.title {
+          color: #f2f2f2;
+          font-family: jaf-herb, serif;
+          font-size: 10rem;
+          letter-spacing: 0.3em;
+        }
+
+        p.subtitle {
+          color: #f2f2f2;
+          font-size: 2.5rem;
+        }
+      }
+    }
+
+    .article-box {
+      width: 45vw;
+      opacity: 0;  
+      margin: 0 auto;
+      height: 50%;
+      margin-top: 20px;
+      overflow: hidden;
+      transition: opacity 200ms ease-out;
+
+      &-bg {
+        box-shadow: inset rgb(117, 90, 68) 0px 0px 100px 10px;
+        background-color: rgba(214, 184, 102, 1);
+        width: 100%;
+        height: 100%;
+        border-radius: 3px;
+        padding: 10px 30px;
+      }
+
+      &.active {
+        opacity: 1;
+      }
+
+      .article-image {
+        height: 100%;
+        width: fit-content;
+        margin: 0 auto;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+
+      .article-title {
+        display: grid;
+        place-content: center;
+        word-spacing: 0.5rem;
+        letter-spacing: 0.3rem;
+        width: 100%;
+        font-family: jaf-herb, serif;
+        font-size: 40px;
+        // opacity: 1;
+        // transition: opacity 400ms ease-out;
+        // position: sticky;
+        // left: 0;
+        // top: 0;
+      }
+
+      .article-content {
+        width: 100%;
+        padding: 20px;
+        font-size: 20px;
+        text-align: start;
+        // opacity: 1;
+        // transition: opacity 400ms ease-out;
+      }
+    }
+  }
+}
