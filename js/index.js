@@ -34,6 +34,9 @@ let pathPositionStart = 0;
 let pathPosition;
 let pathDir;
 let pathLive;
+// page referrers
+let lastPage = document.referrer;
+let lastPageFormat = lastPage.includes("/pages/");
 
 // calling functions
 
@@ -136,12 +139,20 @@ function skipIntro() {
   // KUTE.fromTo("#pathLine", { draw: "0% 0%" }, { draw: "0% 1%" }, { duration: 2000 }).start();
 }
 
-// logo on map action
+function landingFrom() {
+  if (lastPageFormat === true) {
+    skipIntro();
+  } else {
+    intro();
+  }
+}
+
+// page transition
 window.transPage = function (href) {
   document.querySelector("body").style.opacity = 0;
   setTimeout(function () {
     window.location.href = href;
-  }, 1500);
+  }, 1000);
 };
 
 document.addEventListener("DOMContentLoaded", function (event) {
