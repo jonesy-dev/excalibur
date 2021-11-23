@@ -15,31 +15,60 @@ body {
   position: relative;
   height: 100%;
 
-  .knight {
+  .elf {
     position: fixed;
     width: 20rem;
     bottom: 5%;
     left: 45%;
-    animation-duration: 500ms;
+    animation-duration: 1000ms;
     animation-timing-function: linear;
     z-index: 2;
   }
 
-  @keyframes animRotate {
+  @keyframes animFade {
     0% {
-      transform: rotate(0deg);
+      transform: translateX(0);
+      opacity: 1;
+    }
+    10%{
+      opacity: 0.7;
+      transform: translateX(200px);
+    }
+    20%{
+      opacity: 0.5;
+      transform: translateX(400px);
+    }
+    30%{
+      opacity: 0.3;
+      transform: translateX(600px);
+    }
+    40%{
+      opacity: 0.1;
+      transform: translateX(800px);
+    }
+    50%{
+      opacity: 0;
+      transform: translateX(-800px);
+    }
+    60%{
+      opacity: 0.1;
+      transform: translateX(-800px);
+    }
+    70%{
+      opacity: 0.3;
+      transform: translateX(-600px);
+    }
+    80%{
+      opacity: 0.5;
+      transform: translateX(-400px);
+    }
+    90%{
+      opacity: 0.7;
+      transform: translateX(-200px);
     }
     100% {
-      transform: rotate(360deg);
-    }
-  }
-
-  @keyframes revAnimRotate {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(-360deg);
+      opacity: 1;
+      transform: translateX(0);
     }
   }
 

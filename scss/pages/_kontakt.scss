@@ -15,33 +15,6 @@ body {
   position: relative;
   height: 100%;
 
-  .knight {
-    position: fixed;
-    width: 20rem;
-    bottom: 8%;
-    left: 45%;
-    animation-duration: 500ms;
-    animation-timing-function: linear;
-  }
-
-  @keyframes animRotate {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(360deg);
-    }
-  }
-
-  @keyframes revAnimRotate {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(-360deg);
-    }
-  }
-
   .article-grid-box {
     width: 23%;
     height: 50%;
@@ -139,9 +112,9 @@ body {
 
     section {
       height: 100%;
-      background-image: url(/assets/subpages/kontaktbg.jpg);
+      background-image: url(/assets/subpages/kontakt_bg.jpg);
       background-size: cover;
-      background-position-y: -50px;
+      background-position-y: bottom;
       text-align: center;
       width: 100vw;
       display: grid;
@@ -186,6 +159,29 @@ body {
           width: 20rem;
           bottom: 5%;
           left: 45%;
+        }
+
+        ul {
+          list-style: none;
+          display: flex;
+          margin-top: 1em;
+          font-size: 30px;
+
+          .fa-facebook-square {
+            color: #3b5998;
+          }
+
+          .fa-twitter-square {
+            color: #00acee;
+          }
+
+          .fa-instagram {
+            color: #e4405f;
+          }
+
+          li + li {
+            margin-left: 0.5em;
+          }
         }
       }
     }

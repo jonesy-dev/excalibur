@@ -11,34 +11,31 @@ body {
   font-family: "Fira Sans", sans-serif;
 }
 
-.forældre-info {
+.foraeldre-info {
   position: relative;
   height: 100%;
 
-  .knight {
+  .orc {
     position: fixed;
     width: 20rem;
     bottom: 8%;
     left: 45%;
-    animation-duration: 500ms;
-    animation-timing-function: linear;
+    animation-duration: 1000ms;
+    animation-timing-function: cubic-bezier(0.855, 0.03, 0.515, 0.955);
   }
 
-  @keyframes animRotate {
+  @keyframes animScale {
     0% {
-      transform: rotate(0deg);
+      transform: scale(1);
+      transform-origin: bottom;
+    }
+    50% {
+      transform: scale(2);
+      transform-origin: bottom;
     }
     100% {
-      transform: rotate(360deg);
-    }
-  }
-
-  @keyframes revAnimRotate {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(-360deg);
+      transform: scale(1);
+      transform-origin: bottom;
     }
   }
 
