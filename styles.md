@@ -12,9 +12,9 @@ Fira Sans
 
 ## Colours
 
-#1d301d Dark green 
-#93833e Gold
-#1a1c1a Dark text
-#f2f2f2 Light text
+#1d301d Dark green <br />
+#93833e Gold <br />
+#1a1c1a Dark text <br />
+#f2f2f2 Light text <br />
 
 
