@@ -24,10 +24,11 @@ body {
           user-select: none;
   display: -ms-grid;
   display: grid;
-  grid-template-areas: "main";
+      grid-template-areas: "main";
   opacity: 0;
+  -webkit-transition: opacity 0.5s;
   transition: opacity 0.5s;
-  background: url(../../assets/index/logo-V2.png) no-repeat bottom 7% left 5%/20rem, radial-gradient(circle, #252f33 0%, #1a1c1a 69%);
+  background: url(../../assets/index/logo-V2.png) no-repeat bottom 7.8% left 5.5%/20rem, radial-gradient(circle, #252f33 0%, #1a1c1a 69%);
 }
 
 #landingPage {
