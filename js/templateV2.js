@@ -103,16 +103,18 @@ function loginAuth() {
 }
 
 // event listeners for enter in the login form
-userPwd.addEventListener("keyup", function (event) {
-  if (event.keyCode === 13) {
-    submitBtn.click();
-  }
-});
-userBox.addEventListener("keyup", function (event) {
-  if (event.keyCode === 13) {
-    userPwd.focus();
-  }
-});
+function useEnter() {
+  userPwd.addEventListener("keyup", function (event) {
+    if (event.keyCode === 13) {
+      submitBtn.click();
+    }
+  });
+  userBox.addEventListener("keyup", function (event) {
+    if (event.keyCode === 13) {
+      userPwd.focus();
+    }
+  });
+}
 
 //opacityGridBox
 window.addEventListener("scroll", showGridBox);
@@ -249,6 +251,7 @@ document.addEventListener("wheel", function (e) {
 
 // page transitions
 window.transPage = function (href) {
+  debugger;
   document.querySelector("body").style.opacity = 0;
   setTimeout(function () {
     window.location.href = href;
