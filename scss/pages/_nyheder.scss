@@ -15,30 +15,24 @@ body {
   position: relative;
   height: 100%;
 
-  .knight {
+  .mage {
     position: fixed;
     width: 20rem;
-    bottom: 8%;
+    bottom: 5%;
     left: 45%;
-    animation-duration: 500ms;
-    animation-timing-function: linear;
+    animation-duration: 1000ms;
+    animation-timing-function:cubic-bezier(0.25, 0.46, 0.45, 0.94);
   }
 
-  @keyframes animRotate {
-    0% {
-      transform: rotate(0deg);
+  @keyframes animTeleport {
+    0%{
+      transform: scale(1);
+    }
+    50%{
+      transform: scale(0);
     }
     100% {
-      transform: rotate(360deg);
-    }
-  }
-
-  @keyframes revAnimRotate {
-    0% {
-      transform: rotate(0deg);
-    }
-    100% {
-      transform: rotate(-360deg);
+      transform: scale(1);
     }
   }
 
@@ -64,7 +58,7 @@ body {
     }
 
     .article-grid-box-cell {
-      background-color: rgba(214, 184, 102, 0.7);
+      background-color: rgba(73, 47, 37, 0.7);
       width: 100%;
       height: 100%;
       padding: 0 15px;
@@ -72,23 +66,24 @@ body {
       display: grid;
       place-content: center;
       border-radius: 3px;
-      box-shadow: inset #333 0px 0px 15px 3px;
+      box-shadow: inset #a3a3a3 0px 0px 15px 3px;
       cursor: pointer;
-      transition: 400ms ease-in background-color;
+      transition: 400ms ease-in all;
+      color: #f2f2f2;
 
       img {
         width: 100%;
       }
 
       &.active-cell {
-        background-color: rgba(214, 184, 102, 1);
-        box-shadow: inset #fff 0px 0px 15px 3px;
+        background-color: #8e171b;
+        box-shadow: inset #333 0px 0px 15px 3px;
         // background-color: red;
       }
 
       &:hover {
-        background-color: rgba(214, 184, 102, 1);
-        box-shadow: inset #fff 0px 0px 15px 3px;
+        background-color: #8e171b;
+        box-shadow: inset #333 0px 0px 15px 3px;
       }
     }
   }
@@ -140,21 +135,41 @@ body {
 
     section {
       height: 100%;
-      background-image: url(/assets/subpages/bg.jpg);
-      background-size: contain;
+      
+      background-size: cover;
+      background-position: bottom;
       text-align: center;
       width: 100vw;
       display: grid;
       justify-content: center;
 
+      &:nth-child(odd) {
+        background-image: url(/assets/subpages/nyhederbg01.jpg);
+      }
+      &:nth-child(even) {
+        background-image: url(/assets/subpages/nyhederbg.jpg);
+      }
+
       &.main {
         align-content: center;
 
         h2.title {
+          position: relative;
           color: #f2f2f2;
           font-family: jaf-herb, serif;
           font-size: 10rem;
+          isolation: isolate;
+          padding-left: .4em;
           letter-spacing: 0.3em;
+
+          &::after {
+            position: absolute;
+            content: '';
+            inset: 0;
+            background-color: rgba(51, 51, 51, 0.5);
+            z-index: -1;
+            border-radius: 5px;
+          }
         }
 
         p.subtitle {
@@ -175,10 +190,11 @@ body {
 
       &-bg {
         box-shadow: inset rgb(117, 90, 68) 0px 0px 100px 10px;
-        background-color: rgba(214, 184, 102, 1);
+        background-color: rgb(230, 230, 230);
         width: 100%;
         height: 100%;
         border-radius: 3px;
+        border: #8e171b 5px solid;
         padding: 10px 30px;
       }
 
