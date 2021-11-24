@@ -81,18 +81,44 @@ window.addEventListener("scroll", function () {
     }
   }
 });
+//Roll animation
+function animRoll() {
+  window.addEventListener("wheel", (evt) => {
+    if (evt.wheelDelta < 0) {
+      document.querySelector(".knight").style.animationName = "animRotate";
+      setTimeout(() => (document.querySelector(".knight").style.animationName = ""), 500);
+    }
 
-window.addEventListener("wheel", (evt) => {
-  if (evt.wheelDelta < 0) {
-    document.querySelector(".knight").style.animationName = "animRotate";
-    setTimeout(() => (document.querySelector(".knight").style.animationName = ""), 500);
-  }
+    if (evt.wheelDelta > 0) {
+      document.querySelector(".knight").style.animationName = "revAnimRotate";
+      setTimeout(() => (document.querySelector(".knight").style.animationName = ""), 500);
+    }
+  });
+}
 
-  if (evt.wheelDelta > 0) {
-    document.querySelector(".knight").style.animationName = "revAnimRotate";
-    setTimeout(() => (document.querySelector(".knight").style.animationName = ""), 500);
-  }
-});
+//Teleport Animation
+function animTeleport() {
+  window.addEventListener("wheel", () => {
+    document.querySelector(".mage").style.animationName = "animTeleport";
+    setTimeout(() => (document.querySelector(".mage").style.animationName = ""), 1000);
+  });
+}
+
+//Fade Animation
+function animFade() {
+  window.addEventListener("wheel", () => {
+    document.querySelector(".elf").style.animationName = "animFade";
+    setTimeout(() => (document.querySelector(".elf").style.animationName = ""), 1000);
+  });
+}
+
+//Scale Animation
+function animScale() {
+  window.addEventListener("wheel", () => {
+    document.querySelector(".orc").style.animationName = "animScale";
+    setTimeout(() => (document.querySelector(".orc").style.animationName = ""), 1000);
+  });
+}
 
 /********** EXTERNAL FUNCTIONS **********/
 //Important no overflow on Y axis
@@ -101,11 +127,6 @@ document.addEventListener("wheel", function (e) {
     return;
   }
   let delta = (e.deltaY || -e.wheelDelta || e.detail) >> 10 || 1;
-  // if (window.pageXOffset < article.offsetWidth) {
-  //   delta = delta * -article.offsetWidth;
-  // } else {
-  //   delta = delta * -300;
-  // }
   delta = delta * -section.offsetWidth;
   document.documentElement.scrollLeft -= delta;
   // safari needs also this

@@ -8,146 +8,108 @@
     <link rel="stylesheet" href="../css/main.css" />
     <title>Rollespilklubben i Viborg | Excalibur</title>
   </head>
-  <body onload="boxCellsText();">
+  <body onload="boxCellsText();animScale()">
     <div class="forældre-info">
-      <span class="logo-link" onclick="transPage('../index.html')" ;>
-        <img class="icon-img" src="../assets/subpages/logo-V2.svg" alt="" />
+      <a class="logo-link" href="../index.html">
+        <img class="icon-img" src="../assets/subpages/logo-V2.png" alt="" />
         <p>To the Shire</p>
-      </span>
+      </a>
 
-      <img src="../assets/subpages/Blonde-Knight-Kid.svg" alt="" class="knight" />
+      <img src="../assets/subpages/Foraeldre_Orc.svg" alt="" class="orc" />
       <div class="article-grid-box"></div>
       <div class="section-wrapper">
-        <img class="bg-img" src="../assets/subpages/bg.png" alt="" />
+        <!-- <img class="bg-img" src="../assets/subpages/bg.png" alt="" /> -->
         <section class="main">
-          <h2 class="title">ARRANGEMENTER</h2>
+          <h2 class="title">FORÆLDRE INFO</h2>
           <p class="subtitle">Scroll down to explore what's next</p>
         </section>
         <section class="section-1">
           <div class="article-box active">
             <div class="article-box-bg">
-              <div class="article-title">Dec 1 2021</div>
-              <div class="article-content"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, sed molestias? Nisi ut repudiandae animi recusandae quam facere veniam, quia natus consequuntur vero sit eum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem molestias earum mollitia sapiente dolorum rerum beatae tempore non enim, architecto, corporis magni. Nobis veritatis, mollitia quos corporis obcaecati dolores eum quibusdam sequi libero velit aliquam voluptatibus saepe impedit cupiditate illum dolorum atque rem molestias itaque consectetur! A labore quos sed.</p></div>
+              <div class="article-title">Excalibur</div>
+              <div class="article-title-sub">Excalibur</div>
+              <div class="article-content">
+                <p>Når dit barn deltager til Excalibur Rollespil er det ikke meget anderledes end hvis du sender dit barn til fodbold eller spejder. Alle børn spiller som udgangspunkt på et hold med en voksen holdleder, som sørger for at dit barn får en spændende og tryg dag i skoven.</p>
+                <p>Rollespil arrangeres af Excalibur, som er en forening drevet af frivillige og entusiastiske rollespillere. Excalibur er medlem af DUF igennem Bifrost, som er landsforeningen for kreativ udvikling af børn og unge.</p>
+                <p>Vi arrangerer Rollespil to gange om måneden i Undallslund.</p>
+              </div>
             </div>
           </div>
         </section>
         <section class="section-2">
           <div class="article-box">
             <div class="article-box-bg">
-              <div class="article-title">Dec 2 2021</div>
-              <div class="article-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, sed molestias? Nisi ut repudiandae animi recusandae quam facere veniam, quia natus consequuntur vero sit eum.</div>
+              <div class="article-title">Undallslund</div>
+              <div class="article-title-sub">Undallslund Plantage Aldersgrænse</div>
+              <div class="article-content"><p>Som udgangspunkt er spillere i alle aldre velkomne. Vores rollespil sigter dog imod børn og unge i alderen 8-13 år.</p></div>
             </div>
           </div>
         </section>
         <section class="section-3">
           <div class="article-box">
             <div class="article-box-bg">
-              <div class="article-title">Dec 3 2021</div>
-              <div class="article-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, sed molestias? Nisi ut repudiandae animi recusandae quam facere veniam, quia natus consequuntur vero sit eum.</div>
+              <div class="article-title">Forældre</div>
+              <div class="article-title-sub">Forældre må gerne spille med</div>
+              <div class="article-content"><p>Vi ser meget gerne at forældre deltager til Rollespil sammen med deres børn. Det er en rigtig sjov måde at være sammen med sit barn på og de elsker at se mor eller far blive sminket som ork.</p></div>
             </div>
           </div>
         </section>
         <section class="section-4">
           <div class="article-box">
             <div class="article-box-bg">
-              <div class="article-title">Dec 4 2021</div>
-              <div class="article-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, sed molestias? Nisi ut repudiandae animi recusandae quam facere veniam, quia natus consequuntur vero sit eum.</div>
+              <div class="article-title">Facebookgruppe</div>
+              <div class="article-title-sub">Facebookgruppe</div>
+              <div class="article-content">
+                <p>Efterhånden har vi mange forældre, der har været med i nogle år og som ofte giver en hånd med det praktiske og som sørger for kaffe og kakao til gamle sjæle i skoven.</p>
+                <p>Entusiastiske forældre mødes på facebookgruppen:</p>
+                <a href="#">Excalibur afviklere, forældre og kreative hjælpere</a>
+              </div>
             </div>
           </div>
         </section>
         <section class="section-5">
           <div class="article-box">
             <div class="article-box-bg">
-              <div class="article-title">Dec 5 2021</div>
-              <div class="article-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, sed molestias? Nisi ut repudiandae animi recusandae quam facere veniam, quia natus consequuntur vero sit eum.</div>
+              <div class="article-title">Ingen mødepligt</div>
+              <div class="article-title-sub">Ingen mødepligt</div>
+              <div class="article-content"><p>Når man deltager til Rollespil er man ikke forpligtet til at møde op til samtlige spildage. Alle er velkomne – også bare for en enkelt gang.</p></div>
             </div>
           </div>
         </section>
         <section class="section-6">
           <div class="article-box">
             <div class="article-box-bg">
-              <div class="article-title">Dec 6 2021</div>
-              <div class="article-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, sed molestias? Nisi ut repudiandae animi recusandae quam facere veniam, quia natus consequuntur vero sit eum.</div>
+              <div class="article-title">Vind og vejr</div>
+              <div class="article-title-sub">Vind og vejr</div>
+              <div class="article-content">
+                <p>Man kan spille rollespil i al slags vejr og vi lader ikke en smule sne eller regn stoppe os.</p>
+                <p>Hvis det regner meget kan vi dog godt finde på et slutte tidligere end normalt.</p>
+                <p>I så fald vil vi hvis det er muligt annoncere det ved check-in inden spilstart.</p>
+              </div>
             </div>
           </div>
         </section>
         <section class="section-7">
           <div class="article-box">
             <div class="article-box-bg">
-              <div class="article-title">Dec 7 2021</div>
-              <div class="article-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, sed molestias? Nisi ut repudiandae animi recusandae quam facere veniam, quia natus consequuntur vero sit eum.</div>
+              <div class="article-title">Hvis noget går galt, så fortæl os det!</div>
+              <div class="article-title-sub">Hvis noget går galt, så fortæl os det!</div>
+              <div class="article-content">
+                <p>Vi laver rollespil med hundredevis af børn, og nogle gange går noget galt. Der er børn, der bliver uvenner, børn der bliver kede af det eller børn som har en uheldig oplevelse.</p>
+                <p>Vi fanger langt det meste i skoven, men der sker stadig nogle gange ting vi ikke hører om derude. Så hvis du får et barn hjem, som har haft en uheldig oplevelse, så fortæl os det!</p>
+                <p>Ellers finder vi aldrig ud af det, og selvom der er nogle ting vi ikke kan gøre noget ved, så er der også ting vi KAN gøre noget ved.</p>
+                <p>Vores mål er at give børnene en god oplevelse og feedback fra forældre er derfor uvurderligt. Tøv derfor ikke med at kontakte os, også hvis du “bare” har spørgsmål.</p>
+                <p>Du kan finde telefonnumre og mail-adresser på foreningens afviklere under Kontakt.</p>
+              </div>
             </div>
           </div>
         </section>
         <section class="section-8">
           <div class="article-box">
             <div class="article-box-bg">
-              <div class="article-title">Dec 8 2021</div>
-              <div class="article-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, sed molestias? Nisi ut repudiandae animi recusandae quam facere veniam, quia natus consequuntur vero sit eum.</div>
-            </div>
-          </div>
-        </section>
-        <section class="section-9">
-          <div class="article-box">
-            <div class="article-box-bg">
-              <div class="article-title">Dec 9 2021</div>
-              <div class="article-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, sed molestias? Nisi ut repudiandae animi recusandae quam facere veniam, quia natus consequuntur vero sit eum.</div>
-            </div>
-          </div>
-        </section>
-        <section class="section-10">
-          <div class="article-box">
-            <div class="article-box-bg">
-              <div class="article-title">Dec 10 2021</div>
-              <div class="article-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, sed molestias? Nisi ut repudiandae animi recusandae quam facere veniam, quia natus consequuntur vero sit eum.</div>
-            </div>
-          </div>
-        </section>
-        <section class="section-11">
-          <div class="article-box">
-            <div class="article-box-bg">
-              <div class="article-title">Dec 11 2021</div>
-              <div class="article-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, sed molestias? Nisi ut repudiandae animi recusandae quam facere veniam, quia natus consequuntur vero sit eum.</div>
-            </div>
-          </div>
-        </section>
-        <section class="section-12">
-          <div class="article-box">
-            <div class="article-box-bg">
-              <div class="article-title">Dec 12 2021</div>
-              <div class="article-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, sed molestias? Nisi ut repudiandae animi recusandae quam facere veniam, quia natus consequuntur vero sit eum.</div>
-            </div>
-          </div>
-        </section>
-        <section class="section-13">
-          <div class="article-box">
-            <div class="article-box-bg">
-              <div class="article-title">Dec 13 2021</div>
-              <div class="article-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, sed molestias? Nisi ut repudiandae animi recusandae quam facere veniam, quia natus consequuntur vero sit eum.</div>
-            </div>
-          </div>
-        </section>
-        <section class="section-14">
-          <div class="article-box">
-            <div class="article-box-bg">
-              <div class="article-title">Dec 14 2021</div>
-              <div class="article-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, sed molestias? Nisi ut repudiandae animi recusandae quam facere veniam, quia natus consequuntur vero sit eum.</div>
-            </div>
-          </div>
-        </section>
-        <section class="section-15">
-          <div class="article-box">
-            <div class="article-box-bg">
-              <div class="article-title">Dec 15 2021</div>
-              <div class="article-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, sed molestias? Nisi ut repudiandae animi recusandae quam facere veniam, quia natus consequuntur vero sit eum.</div>
-            </div>
-          </div>
-        </section>
-        <section class="section-16">
-          <div class="article-box">
-            <div class="article-box-bg">
-              <div class="article-title">Dec 16 2021</div>
-              <div class="article-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, sed molestias? Nisi ut repudiandae animi recusandae quam facere veniam, quia natus consequuntur vero sit eum.</div>
+              <div class="article-title">Husk telefon nummer</div>
+              <div class="article-title-sub">Husk telefon nummer</div>
+              <div class="article-content"><p>Det er meget vigtigt at dit barn har et telefonnummer på sig, så vi kan få fat på forældre eller værge, hvis der skulle opstå en situation, hvor dette er nødvendigt.</p></div>
             </div>
           </div>
         </section>
