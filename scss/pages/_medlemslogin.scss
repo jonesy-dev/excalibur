@@ -97,7 +97,7 @@ body {
     position: fixed;
     bottom: 5%;
     left: 5%;
-    z-index: 1;
+    z-index: 6;
 
     p {
       position: absolute;
@@ -140,8 +140,8 @@ body {
 
     section {
       height: 100%;
-      background-image: url(/assets/subpages/bg.jpg);
-      background-size: contain;
+      background-image: url(/assets/subpages/medlemsloginBg.jpg);
+      background-size: cover;
       text-align: center;
       width: 100vw;
       display: grid;
@@ -149,6 +149,11 @@ body {
 
       &.main {
         align-content: center;
+
+        #titles {
+          display: none;
+          opacity: 0;
+        }
 
         h2.title {
           color: #f2f2f2;
@@ -166,7 +171,7 @@ body {
 
     .article-box {
       width: 45vw;
-      opacity: 0;  
+      opacity: 0;
       margin: 0 auto;
       height: 50%;
       margin-top: 20px;
@@ -220,6 +225,134 @@ body {
         text-align: start;
         // opacity: 1;
         // transition: opacity 400ms ease-out;
+      }
+    }
+  }
+}
+
+#loginWrap {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  opacity: 1;
+  top: 0%;
+  left: 0%;
+  z-index: 5;
+
+  #overlay {
+    width: 100%;
+    height: 100%;
+    background: #000000cc;
+
+    #portcullis {
+      width: 100%;
+      position: absolute;
+      bottom: 0%;
+    }
+  }
+
+  #loginModal {
+    opacity: 1;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 70rem;
+    height: 50rem;
+    padding: 4rem;
+    border-radius: 0.5rem;
+    background-color: rgba(214, 184, 102);
+
+    #fieldWrap {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-around;
+      padding: 2rem 5rem;
+      gap: 1rem;
+      height: 100%;
+      border: 3px solid #1d301d;
+
+      input {
+        height: 7rem;
+        border: none;
+        border-radius: 0.3rem;
+        font-family: "Fira Sans", sans-serif;
+        font-size: 3rem;
+        font-weight: 700;
+        //text-transform: capitalize;
+        outline: none;
+        cursor: pointer;
+
+        &::placeholder {
+          font-family: "Fira Sans", sans-serif;
+          font-size: 2rem;
+        }
+      }
+
+      input[type="text"]:focus,
+      input[type="password"]:focus {
+        border: 3px solid #1d301d;
+      }
+      #legend {
+        font-family: jaf-herb, serif;
+        font-size: 3rem;
+        text-transform: uppercase;
+        letter-spacing: 0.3rem;
+        color: #1d301d;
+        padding: 0 2rem;
+      }
+      #userName {
+        padding-left: 2rem;
+      }
+      #userPwd {
+        padding-left: 2rem;
+      }
+
+      #tryAgain {
+        display: none;
+        opacity: 0;
+        background-color: #1d301d;
+        color: #93833e;
+        font-family: jaf-herb, sans-serif;
+        font-size: 3rem;
+        letter-spacing: 0.4rem;
+        transition: box-shadow 0.2s ease-out;
+
+        &:hover {
+          box-shadow: 5px 5px 7px #1a1c1a90;
+        }
+
+        &:active {
+          box-shadow: none;
+          background-color: #1d301dcb;
+          transform: translate(2px, 2px);
+        }
+      }
+
+      #submitBtn {
+        opacity: 1;
+        background-color: #1d301d;
+        color: #93833e;
+        font-family: jaf-herb, sans-serif;
+        font-size: 3rem;
+        letter-spacing: 0.4rem;
+        transition: box-shadow 0.2s ease-out;
+
+        &:hover {
+          box-shadow: 5px 5px 7px #1a1c1a90;
+        }
+
+        &:active {
+          box-shadow: none;
+          background-color: #1d301dcb;
+          transform: translate(2px, 2px);
+        }
+      }
+
+      #wrapKey {
+        display: none;
+        opacity: 0;
+        padding: 4rem 10rem;
       }
     }
   }

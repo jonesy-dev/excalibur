@@ -5,8 +5,114 @@ const articleGridBox = document.querySelector(".article-grid-box");
 const articleBoxArray = document.querySelectorAll(".article-box");
 const articleTitleArray = document.querySelectorAll(".article-title");
 const articleImagesArray = document.querySelectorAll(".article-image");
+//medlemslogin page
+let gate = document.querySelector("#portcullis"),
+  modal = document.querySelector("#loginModal"),
+  overlay = document.querySelector("#overlay"),
+  loginWrap = document.querySelector("#loginWrap"),
+  userBox = document.querySelector("#userName"),
+  userPwd = document.querySelector("#userPwd"),
+  submitBtn = document.querySelector("#submitBtn"),
+  tryAgain = document.querySelector("#tryAgain"),
+  formComps = document.querySelectorAll(".formComps"),
+  wrapKey = document.querySelector("#wrapKey"),
+  svgKey = document.querySelector("#svgKey"),
+  pathKey = document.querySelector("#pathKey"),
+  titles = document.querySelector("#titles"),
+  username,
+  password;
+// users array
+let dbUsers = [
+  { navn: "Aske", pass: "letmein" },
+  { navn: "Sami", pass: "openplease" },
+  { navn: "Craig", pass: "password" },
+];
 
 /********** FUNCTIONS **********/
+
+//medlemslogin open gate with credentials
+function medlemEntry() {
+  KUTE.allTo(formComps, { opacity: 0 }, { duration: 1000, offset: 750, easing: "linear" }).start();
+
+  setTimeout(function () {
+    for (let i = 0; i < formComps.length; i++) {
+      formComps[i].style.display = "none";
+    }
+    wrapKey.style.display = "block";
+    KUTE.to(wrapKey, { opacity: 1 }, { duration: 2000 }).start();
+  }, 1000);
+
+  setTimeout(function () {
+    KUTE.fromTo(pathKey, { attr: { fill: "#93833e" } }, { attr: { fill: "#1d301d" } }, { duration: 1000, yoyo: true, repeat: 3 }).start();
+  }, 3000);
+
+  setTimeout(function () {
+    KUTE.to(modal, { opacity: 0 }, { duration: 2000, easing: "easingCubicIn" }).start();
+    KUTE.fromTo(gate, { translate: [0, 0] }, { translate: [0, -850] }, { delay: 2000, duration: 3000, easing: "easingExponentialIn" }).start();
+    KUTE.to(loginWrap, { opacity: 0 }, { delay: 5500, duration: 2000, easing: "easingCubicIn" }).start();
+    titles.style.display = "block";
+    KUTE.to(titles, { opacity: 1 }, { delay: 5500, duration: 2000, easing: "easingCubicIn" }).start();
+  }, 6500);
+}
+//medlemslogin deny entry pga credentials
+function denyEntry() {
+  modal.style.filter = "grayscale(100%)";
+  KUTE.to(submitBtn, { opacity: 0 }).start();
+  submitBtn.style.display = "none";
+  userBox.placeholder = "Åh nej!";
+  userBox.disabled = true;
+  userBox.value = "";
+  userPwd.placeholder = "Er du kendt her, fremmed?";
+  userPwd.disabled = true;
+  userPwd.value = "";
+  tryAgain.style.display = "flex";
+  tryAgain.focus();
+  KUTE.to(tryAgain, { opacity: 1 }).start();
+}
+//reset login modal after failed attempt
+function resetLogin() {
+  KUTE.to(tryAgain, { opacity: 0 }).start();
+  tryAgain.style.display = "none";
+  userPwd.disabled = false;
+  userPwd.placeholder = "Kodeord";
+  userPwd.value = "";
+  userBox.disabled = false;
+  userBox.placeholder = "Brugernavn";
+  userBox.value = "";
+  userBox.focus();
+  submitBtn.style.display = "flex";
+  KUTE.to(submitBtn, { opacity: 1 }).start();
+  modal.style.filter = "grayscale(0%)";
+}
+
+function loginAuth() {
+  username = document.querySelector("#userName").value;
+  password = document.querySelector("#userPwd").value;
+  for (let i = 0; i < dbUsers.length; i++) {
+    ///
+    if (dbUsers[i].navn.includes(username) && dbUsers[i].pass.includes(password) && username != "" && password != "") {
+      console.log("PASS");
+      medlemEntry();
+      return;
+    } else {
+      console.log("FAIL");
+      denyEntry();
+      return;
+    }
+  }
+}
+
+// event listeners for enter in the login form
+userPwd.addEventListener("keyup", function (event) {
+  if (event.keyCode === 13) {
+    submitBtn.click();
+  }
+});
+userBox.addEventListener("keyup", function (event) {
+  if (event.keyCode === 13) {
+    userPwd.focus();
+  }
+});
 
 //opacityGridBox
 window.addEventListener("scroll", showGridBox);
@@ -95,6 +201,8 @@ window.addEventListener("wheel", (evt) => {
 });
 
 /********** EXTERNAL FUNCTIONS **********/
+//window.addEventListener("wheel", (e) => e.preventDefault(), { passive: false });
+
 //Important no overflow on Y axis
 document.addEventListener("wheel", function (e) {
   if (e.type != "wheel") {
@@ -110,7 +218,7 @@ document.addEventListener("wheel", function (e) {
   document.documentElement.scrollLeft -= delta;
   // safari needs also this
   document.body.scrollLeft -= delta;
-  // e.preventDefault();
+  //e.preventDefault();
 });
 
 // /* WIDTH CALCULATOR */
