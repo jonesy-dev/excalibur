@@ -1,42 +1,42 @@
 // declaring variables
 
 // intro vars
-let theShire = document.querySelector("#audioInt");
-let skipIntroBeat = document.querySelector("#skipIntroBeat");
-let logo = document.querySelector("#logo");
-let transInt = document.querySelector("#transInt");
+let theShire = document.querySelector("#audioInt"),
+  skipIntroBeat = document.querySelector("#skipIntroBeat"),
+  logo = document.querySelector("#logo"),
+  transInt = document.querySelector("#transInt");
 // map vars
-let townLinks = document.getElementsByClassName("townLinks");
-let townLinksActive = document.getElementsByClassName("townLinksActive");
-let town1 = document.querySelector("#town-1");
-let town2 = document.querySelector("#town-2");
-let town3 = document.querySelector("#town-3");
-let town4 = document.querySelector("#town-4");
-let town5 = document.querySelector("#town-5");
-let town6 = document.querySelector("#town-6");
-let town7 = document.querySelector("#town-7");
-let flag1 = document.querySelector("#flag-1");
-let flag2 = document.querySelector("#flag-2");
-let flag3 = document.querySelector("#flag-3");
-let flag4 = document.querySelector("#flag-4");
-let flag5 = document.querySelector("#flag-5");
-let flag6 = document.querySelector("#flag-6");
-let flag7 = document.querySelector("#flag-7");
-let logoMain = document.querySelector("#logoMain");
-let compass = document.querySelector("#compass");
-let scrollPrompt = document.querySelector("#scrollPrompt");
+let townLinks = document.getElementsByClassName("townLinks"),
+  townLinksActive = document.getElementsByClassName("townLinksActive"),
+  town1 = document.querySelector("#town-1"),
+  town2 = document.querySelector("#town-2"),
+  town3 = document.querySelector("#town-3"),
+  town4 = document.querySelector("#town-4"),
+  town5 = document.querySelector("#town-5"),
+  town6 = document.querySelector("#town-6"),
+  town7 = document.querySelector("#town-7"),
+  flag1 = document.querySelector("#flag-1"),
+  flag2 = document.querySelector("#flag-2"),
+  flag3 = document.querySelector("#flag-3"),
+  flag4 = document.querySelector("#flag-4"),
+  flag5 = document.querySelector("#flag-5"),
+  flag6 = document.querySelector("#flag-6"),
+  flag7 = document.querySelector("#flag-7"),
+  logoMain = document.querySelector("#logoMain"),
+  compass = document.querySelector("#compass"),
+  scrollPrompt = document.querySelector("#scrollPrompt");
 // skip intro vars
-let skipBtn = document.querySelector("#skipBtn");
-let skipIntroCalled;
+let skipBtn = document.querySelector("#skipBtn"),
+  skipIntroCalled;
 // scrolly vars
-let wheelTimer;
-let pathPositionStart = 0;
-let pathPosition;
-let pathDir;
-let pathLive;
+let wheelTimer,
+  pathPositionStart = 0,
+  pathPosition,
+  pathDir,
+  pathLive;
 // page referrers
-let lastPage = document.referrer;
-let lastPageFormat = lastPage.includes("/pages/");
+let lastPage = document.referrer,
+  lastPageFormat = lastPage.includes("/pages/");
 
 // calling functions
 

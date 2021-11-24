@@ -179,10 +179,6 @@ body {
         filter: saturate(250%) drop-shadow(5px 5px 10px #1a1c1a);
         transform: scale(101%);
       }
-
-      &:active {
-        animation: logoSpin 1s ease-in;
-      }
     }
 
     #compass {
