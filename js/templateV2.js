@@ -5,8 +5,16 @@ const articleGridBox = document.querySelector(".article-grid-box");
 const articleBoxArray = document.querySelectorAll(".article-box");
 const articleTitleArray = document.querySelectorAll(".article-title");
 const articleImagesArray = document.querySelectorAll(".article-image");
+
 //medlemslogin page
-let gate = document.querySelector("#portcullis"),
+let box1 = document.querySelector("#box1"),
+  box1Title = document.querySelector("#box1Title"),
+  box1Content = document.querySelector("#box1Content"),
+  att1 = document.querySelector("#attValue-1"),
+  att2 = document.querySelector("#attValue-2"),
+  att3 = document.querySelector("#attValue-3"),
+  att4 = document.querySelector("#attValue-4"),
+  gate = document.querySelector("#portcullis"),
   modal = document.querySelector("#loginModal"),
   overlay = document.querySelector("#overlay"),
   loginWrap = document.querySelector("#loginWrap"),
@@ -19,13 +27,21 @@ let gate = document.querySelector("#portcullis"),
   svgKey = document.querySelector("#svgKey"),
   pathKey = document.querySelector("#pathKey"),
   titles = document.querySelector("#titles"),
+  h2Title = document.querySelector(".title"),
+  theOthersArray,
+  loggedInUserObj,
   username,
   password;
 // users array
 let dbUsers = [
-  { navn: "Aske", pass: "letmein" },
-  { navn: "Sami", pass: "openplease" },
-  { navn: "Craig", pass: "password" },
+  { navn: "Aske", pass: "letmein", character: "Sir Galahad", race: "menneske", styrke: 18, vitalitet: 15, forsvar: 14, agility: 15 },
+  { navn: "Sami", pass: "openplease", character: "Merlin", race: "trollmand", styrke: 16, vitalitet: 14, forsvar: 19, agility: 18 },
+  { navn: "Craig", pass: "password", character: "Elrond", race: "elvere", styrke: 12, vitalitet: 20, forsvar: 13, agility: 17 },
+  { navn: "Nina", pass: "password", character: "Legolas", race: "elvere", styrke: 12, vitalitet: 20, forsvar: 13, agility: 17 },
+  { navn: "Amalie", pass: "password", character: "Gandalf", race: "trollmand", styrke: 12, vitalitet: 20, forsvar: 13, agility: 17 },
+  { navn: "Liv", pass: "password", character: "Eowyn", race: "menneske", styrke: 12, vitalitet: 20, forsvar: 13, agility: 17 },
+  { navn: "Amanda", pass: "password", character: "Galadriel", race: "elvere", styrke: 12, vitalitet: 20, forsvar: 13, agility: 17 },
+  { navn: "Betina", pass: "password", character: "Frodo", race: "hobbits", styrke: 12, vitalitet: 20, forsvar: 13, agility: 17 },
 ];
 
 /********** FUNCTIONS **********/
@@ -33,6 +49,10 @@ let dbUsers = [
 //medlemslogin open gate with credentials
 function medlemEntry() {
   KUTE.allTo(formComps, { opacity: 0 }, { duration: 1000, offset: 750, easing: "linear" }).start();
+  h2Title.innerHTML = `Velkommen hjem <br> ${username}`;
+  theOthersArray = theOthers(dbUsers, loggedInUserObj);
+  attPopulate();
+  boxCellsTextML();
 
   setTimeout(function () {
     for (let i = 0; i < formComps.length; i++) {
@@ -43,8 +63,8 @@ function medlemEntry() {
   }, 1000);
 
   setTimeout(function () {
-    KUTE.fromTo(pathKey, { attr: { fill: "#93833e" } }, { attr: { fill: "#1d301d" } }, { duration: 1000, yoyo: true, repeat: 3 }).start();
-  }, 3000);
+    KUTE.fromTo(pathKey, { attr: { fill: "#93833e" } }, { attr: { fill: "#1d301d" } }, { duration: 750, yoyo: true, repeat: 3 }).start();
+  }, 2000);
 
   setTimeout(function () {
     KUTE.to(modal, { opacity: 0 }, { duration: 2000, easing: "easingCubicIn" }).start();
@@ -52,7 +72,7 @@ function medlemEntry() {
     KUTE.to(loginWrap, { opacity: 0 }, { delay: 5500, duration: 2000, easing: "easingCubicIn" }).start();
     titles.style.display = "block";
     KUTE.to(titles, { opacity: 1 }, { delay: 5500, duration: 2000, easing: "easingCubicIn" }).start();
-  }, 6500);
+  }, 4500);
 }
 //medlemslogin deny entry pga credentials
 function denyEntry() {
@@ -84,25 +104,40 @@ function resetLogin() {
   KUTE.to(submitBtn, { opacity: 1 }).start();
   modal.style.filter = "grayscale(0%)";
 }
-
+//check user/pass against dbUser array at top of script
 function loginAuth() {
+  //credential variables
   username = document.querySelector("#userName").value;
   password = document.querySelector("#userPwd").value;
-  for (let i = 0; i < dbUsers.length; i++) {
-    ///
-    if (dbUsers[i].navn.includes(username) && dbUsers[i].pass.includes(password) && username != "" && password != "") {
-      console.log("PASS");
-      medlemEntry();
-      return;
-    } else {
-      console.log("FAIL");
-      denyEntry();
-      return;
+
+  //conditions
+  let empty = username == "" || password == "";
+  function dbCheck() {
+    //console.log("PASS empty");
+    for (let i = 0; i < dbUsers.length; i++) {
+      if (dbUsers[i].navn == username && dbUsers[i].pass == password) {
+        //console.log("PASS in dbCheck", `${username + password}`);
+        loggedInUserObj = i;
+        return "pass";
+      } else {
+        //console.log("FAIL in dbCheck");
+      }
     }
   }
-}
 
-// event listeners for enter in the login form
+  //processing
+  if (empty) {
+    //console.log("FAIL empty");
+    denyEntry();
+  } else if (dbCheck()) {
+    //console.log("PASS after dbCheck");
+    medlemEntry();
+  } else {
+    //console.log("FAIL after dbCheck");
+    denyEntry();
+  }
+}
+//event listeners for enter in the login form
 function useEnter() {
   userPwd.addEventListener("keyup", function (event) {
     if (event.keyCode === 13) {
@@ -114,6 +149,18 @@ function useEnter() {
       userPwd.focus();
     }
   });
+}
+//add user attributes to editable card
+function attPopulate() {
+  box1Title.innerHTML = dbUsers[loggedInUserObj].character;
+  att1.innerHTML = dbUsers[loggedInUserObj].styrke;
+  att2.innerHTML = dbUsers[loggedInUserObj].vitalitet;
+  att3.innerHTML = dbUsers[loggedInUserObj].forsvar;
+  att4.innerHTML = dbUsers[loggedInUserObj].agility;
+}
+//filter new array to not include logged in user
+function theOthers(dbUsers, n) {
+  return dbUsers.filter((elem, i) => i !== n);
 }
 
 //opacityGridBox
@@ -133,6 +180,24 @@ function boxCellsText() {
   for (i = 1; i < articleTitleArray.length; i++) {
     document.querySelector(".article-grid-box").innerHTML += `<div class="article-grid-box-cell">${articleTitleArray[i].innerHTML}</div>`;
   }
+  const articleGridBoxCellArray = document.querySelectorAll(".article-grid-box-cell");
+  articleGridBoxCellArray.forEach((articleGridBoxCellSingle, i = 0) => {
+    articleGridBoxCellSingle.addEventListener("click", () => {
+      window.scroll(section.offsetWidth * (i + 1), 0);
+    });
+  });
+}
+
+// same loop but for medlemslogin
+function boxCellsTextML() {
+  let memberTitle = document.querySelectorAll(".article-title");
+  document.querySelector(".article-grid-box").innerHTML = `<div class="article-grid-box-cell active-cell">${memberTitle[0].innerText}</div>`;
+
+  for (i = 0; i < theOthersArray.length; i++) {
+    document.querySelector(".article-grid-box").innerHTML += `<div class="article-grid-box-cell">${theOthersArray[i].character}</div>`;
+    //articleTitleArray[i].innerHTML += `${theOthersArray[i].character}`;
+  }
+
   const articleGridBoxCellArray = document.querySelectorAll(".article-grid-box-cell");
   articleGridBoxCellArray.forEach((articleGridBoxCellSingle, i = 0) => {
     articleGridBoxCellSingle.addEventListener("click", () => {
@@ -219,6 +284,12 @@ function animFade() {
     setTimeout(() => (document.querySelector(".elf").style.animationName = ""), 1000);
   });
 }
+function animFadeNecro() {
+  window.addEventListener("wheel", () => {
+    document.querySelector(".necro").style.animationName = "animFade";
+    setTimeout(() => (document.querySelector(".necro").style.animationName = ""), 1000);
+  });
+}
 
 //Scale Animation
 function animScale() {
@@ -249,9 +320,8 @@ document.addEventListener("wheel", function (e) {
 //   console.log(window.pageXOffset);
 // });
 
-// page transitions
+/// page transition
 window.transPage = function (href) {
-  debugger;
   document.querySelector("body").style.opacity = 0;
   setTimeout(function () {
     window.location.href = href;

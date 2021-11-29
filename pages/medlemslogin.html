@@ -9,148 +9,252 @@
     <link rel="stylesheet" href="../css/main.css" />
     <title>Rollespilklubben i Viborg | Excalibur</title>
   </head>
-  <body onload="boxCellsText(); useEnter();">
+  <body onload="useEnter(); animRoll()">
     <div class="medlemslogin">
       <span class="logo-link" onclick="transPage('../index.html')" ;>
         <img class="icon-img" src="../assets/subpages/logo-V2.png" alt="" />
         <p>To the Shire</p>
       </span>
 
-      <img src="../assets/subpages/Blonde-Knight-Kid.svg" alt="" class="knight" />
+      <img src="../assets/subpages/Galleri_Knight.svg" alt="" class="knight" />
       <div class="article-grid-box"></div>
       <div class="section-wrapper">
         <!-- <img class="bg-img" src="../assets/subpages/bg.png" alt="" /> -->
         <section class="main">
           <div id="titles">
-            <h2 class="title">MEDLEMSLOGIN</h2>
+            <h2 class="title"></h2>
             <p class="subtitle">Scroll down to explore what's next</p>
           </div>
         </section>
         <section class="section-1">
-          <div class="article-box active">
+          <div id="box1" class="article-box active">
             <div class="article-box-bg">
-              <div class="article-title">Dec 1 2021</div>
-              <div class="article-content"><p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, sed molestias? Nisi ut repudiandae animi recusandae quam facere veniam, quia natus consequuntur vero sit eum. Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolorem molestias earum mollitia sapiente dolorum rerum beatae tempore non enim, architecto, corporis magni. Nobis veritatis, mollitia quos corporis obcaecati dolores eum quibusdam sequi libero velit aliquam voluptatibus saepe impedit cupiditate illum dolorum atque rem molestias itaque consectetur! A labore quos sed.</p></div>
+              <div id="box1Title" class="article-title" contenteditable="true">Logged In Member</div>
+              <div id="box1Content" class="article-content medlemsContent">
+                <div id="att-1" class="att-1 attributes">
+                  <img src="../assets/subpages/medlemslogin/fist-raised-solid.svg" alt="" class="attImgs" />
+                  <span class="attName">Styrke</span>
+                  <span id="attValue-1" class="attributeValues" contenteditable="true"></span>
+                </div>
+                <div id="att-2" class="att-2 attributes">
+                  <img src="../assets/subpages/medlemslogin/heartbeat-solid.svg" alt="" class="attImgs" />
+                  <span class="attName">Vitalitet</span>
+                  <span id="attValue-2" class="attributeValues" contenteditable="true"></span>
+                </div>
+                <div id="att-3" class="att-3 attributes">
+                  <img src="../assets/subpages/medlemslogin/shield-alt-solid.svg" alt="" class="attImgs" />
+                  <span class="attName">Forsvar</span>
+                  <span id="attValue-3" class="attributeValues" contenteditable="true"></span>
+                </div>
+                <div id="att-4" class="att-4 attributes">
+                  <img src="../assets/subpages/medlemslogin/bolt-solid.svg" alt="" class="attImgs" />
+                  <span class="attName">Agility</span>
+                  <span id="attValue-4" class="attributeValues" contenteditable="true"></span>
+                </div>
+              </div>
             </div>
           </div>
         </section>
         <section class="section-2">
           <div class="article-box">
             <div class="article-box-bg">
-              <div class="article-title">Dec 2 2021</div>
-              <div class="article-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, sed molestias? Nisi ut repudiandae animi recusandae quam facere veniam, quia natus consequuntur vero sit eum.</div>
+              <div class="article-title"></div>
+              <div class="article-content medlemsContent">
+                <div class="att-1 attributes">
+                  <img src="../assets/subpages/medlemslogin/fist-raised-solid.svg" alt="" class="attImgs" />
+                  <span class="attName">Styrke</span>
+                  <span id="attValue-1" class="attValue-1 attributeValues" contenteditable="true"></span>
+                </div>
+                <div class="att-2 attributes">
+                  <img src="../assets/subpages/medlemslogin/heartbeat-solid.svg" alt="" class="attImgs" />
+                  <span class="attName">Vitalitet</span>
+                  <span id="attValue-2" class="attValue-2 attributeValues" contenteditable="true"></span>
+                </div>
+                <div class="att-3 attributes">
+                  <img src="../assets/subpages/medlemslogin/shield-alt-solid.svg" alt="" class="attImgs" />
+                  <span class="attName">Forsvar</span>
+                  <span id="attValue-3" class="attValue-3 attributeValues" contenteditable="true"></span>
+                </div>
+                <div class="att-4 attributes">
+                  <img src="../assets/subpages/medlemslogin/bolt-solid.svg" alt="" class="attImgs" />
+                  <span class="attName">Agility</span>
+                  <span id="attValue-4" class="attValue-4 attributeValues" contenteditable="true"></span>
+                </div>
+              </div>
             </div>
           </div>
         </section>
         <section class="section-3">
           <div class="article-box">
             <div class="article-box-bg">
-              <div class="article-title">Dec 3 2021</div>
-              <div class="article-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, sed molestias? Nisi ut repudiandae animi recusandae quam facere veniam, quia natus consequuntur vero sit eum.</div>
+              <div class="article-title"></div>
+              <div class="article-content medlemsContent">
+                <div class="att-1 attributes">
+                  <img src="../assets/subpages/medlemslogin/fist-raised-solid.svg" alt="" class="attImgs" />
+                  <span class="attName">Styrke</span>
+                  <span id="attValue-1" class="attValue-1 attributeValues" contenteditable="true"></span>
+                </div>
+                <div class="att-2 attributes">
+                  <img src="../assets/subpages/medlemslogin/heartbeat-solid.svg" alt="" class="attImgs" />
+                  <span class="attName">Vitalitet</span>
+                  <span id="attValue-2" class="attValue-2 attributeValues" contenteditable="true"></span>
+                </div>
+                <div class="att-3 attributes">
+                  <img src="../assets/subpages/medlemslogin/shield-alt-solid.svg" alt="" class="attImgs" />
+                  <span class="attName">Forsvar</span>
+                  <span id="attValue-3" class="attValue-3 attributeValues" contenteditable="true"></span>
+                </div>
+                <div class="att-4 attributes">
+                  <img src="../assets/subpages/medlemslogin/bolt-solid.svg" alt="" class="attImgs" />
+                  <span class="attName">Agility</span>
+                  <span id="attValue-4" class="attValue-4 attributeValues" contenteditable="true"></span>
+                </div>
+              </div>
             </div>
           </div>
         </section>
         <section class="section-4">
           <div class="article-box">
             <div class="article-box-bg">
-              <div class="article-title">Dec 4 2021</div>
-              <div class="article-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, sed molestias? Nisi ut repudiandae animi recusandae quam facere veniam, quia natus consequuntur vero sit eum.</div>
+              <div class="article-title"></div>
+              <div class="article-content medlemsContent">
+                <div class="att-1 attributes">
+                  <img src="../assets/subpages/medlemslogin/fist-raised-solid.svg" alt="" class="attImgs" />
+                  <span class="attName">Styrke</span>
+                  <span id="attValue-1" class="attValue-1 attributeValues" contenteditable="true"></span>
+                </div>
+                <div class="att-2 attributes">
+                  <img src="../assets/subpages/medlemslogin/heartbeat-solid.svg" alt="" class="attImgs" />
+                  <span class="attName">Vitalitet</span>
+                  <span id="attValue-2" class="attValue-2 attributeValues" contenteditable="true"></span>
+                </div>
+                <div class="att-3 attributes">
+                  <img src="../assets/subpages/medlemslogin/shield-alt-solid.svg" alt="" class="attImgs" />
+                  <span class="attName">Forsvar</span>
+                  <span id="attValue-3" class="attValue-3 attributeValues" contenteditable="true"></span>
+                </div>
+                <div class="att-4 attributes">
+                  <img src="../assets/subpages/medlemslogin/bolt-solid.svg" alt="" class="attImgs" />
+                  <span class="attName">Agility</span>
+                  <span id="attValue-4" class="attValue-4 attributeValues" contenteditable="true"></span>
+                </div>
+              </div>
             </div>
           </div>
         </section>
         <section class="section-5">
           <div class="article-box">
             <div class="article-box-bg">
-              <div class="article-title">Dec 5 2021</div>
-              <div class="article-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, sed molestias? Nisi ut repudiandae animi recusandae quam facere veniam, quia natus consequuntur vero sit eum.</div>
+              <div class="article-title"></div>
+              <div class="article-content medlemsContent">
+                <div class="att-1 attributes">
+                  <img src="../assets/subpages/medlemslogin/fist-raised-solid.svg" alt="" class="attImgs" />
+                  <span class="attName">Styrke</span>
+                  <span id="attValue-1" class="attValue-1 attributeValues" contenteditable="true"></span>
+                </div>
+                <div class="att-2 attributes">
+                  <img src="../assets/subpages/medlemslogin/heartbeat-solid.svg" alt="" class="attImgs" />
+                  <span class="attName">Vitalitet</span>
+                  <span id="attValue-2" class="attValue-2 attributeValues" contenteditable="true"></span>
+                </div>
+                <div class="att-3 attributes">
+                  <img src="../assets/subpages/medlemslogin/shield-alt-solid.svg" alt="" class="attImgs" />
+                  <span class="attName">Forsvar</span>
+                  <span id="attValue-3" class="attValue-3 attributeValues" contenteditable="true"></span>
+                </div>
+                <div class="att-4 attributes">
+                  <img src="../assets/subpages/medlemslogin/bolt-solid.svg" alt="" class="attImgs" />
+                  <span class="attName">Agility</span>
+                  <span id="attValue-4" class="attValue-4 attributeValues" contenteditable="true"></span>
+                </div>
+              </div>
             </div>
           </div>
         </section>
         <section class="section-6">
           <div class="article-box">
             <div class="article-box-bg">
-              <div class="article-title">Dec 6 2021</div>
-              <div class="article-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, sed molestias? Nisi ut repudiandae animi recusandae quam facere veniam, quia natus consequuntur vero sit eum.</div>
+              <div class="article-title"></div>
+              <div class="article-content medlemsContent">
+                <div class="att-1 attributes">
+                  <img src="../assets/subpages/medlemslogin/fist-raised-solid.svg" alt="" class="attImgs" />
+                  <span class="attName">Styrke</span>
+                  <span id="attValue-1" class="attValue-1 attributeValues" contenteditable="true"></span>
+                </div>
+                <div class="att-2 attributes">
+                  <img src="../assets/subpages/medlemslogin/heartbeat-solid.svg" alt="" class="attImgs" />
+                  <span class="attName">Vitalitet</span>
+                  <span id="attValue-2" class="attValue-2 attributeValues" contenteditable="true"></span>
+                </div>
+                <div class="att-3 attributes">
+                  <img src="../assets/subpages/medlemslogin/shield-alt-solid.svg" alt="" class="attImgs" />
+                  <span class="attName">Forsvar</span>
+                  <span id="attValue-3" class="attValue-3 attributeValues" contenteditable="true"></span>
+                </div>
+                <div class="att-4 attributes">
+                  <img src="../assets/subpages/medlemslogin/bolt-solid.svg" alt="" class="attImgs" />
+                  <span class="attName">Agility</span>
+                  <span id="attValue-4" class="attValue-4 attributeValues" contenteditable="true"></span>
+                </div>
+              </div>
             </div>
           </div>
         </section>
         <section class="section-7">
           <div class="article-box">
             <div class="article-box-bg">
-              <div class="article-title">Dec 7 2021</div>
-              <div class="article-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, sed molestias? Nisi ut repudiandae animi recusandae quam facere veniam, quia natus consequuntur vero sit eum.</div>
+              <div class="article-title"></div>
+              <div class="article-content medlemsContent">
+                <div class="att-1 attributes">
+                  <img src="../assets/subpages/medlemslogin/fist-raised-solid.svg" alt="" class="attImgs" />
+                  <span class="attName">Styrke</span>
+                  <span id="attValue-1" class="attValue-1 attributeValues" contenteditable="true"></span>
+                </div>
+                <div class="att-2 attributes">
+                  <img src="../assets/subpages/medlemslogin/heartbeat-solid.svg" alt="" class="attImgs" />
+                  <span class="attName">Vitalitet</span>
+                  <span id="attValue-2" class="attValue-2 attributeValues" contenteditable="true"></span>
+                </div>
+                <div class="att-3 attributes">
+                  <img src="../assets/subpages/medlemslogin/shield-alt-solid.svg" alt="" class="attImgs" />
+                  <span class="attName">Forsvar</span>
+                  <span id="attValue-3" class="attValue-3 attributeValues" contenteditable="true"></span>
+                </div>
+                <div class="att-4 attributes">
+                  <img src="../assets/subpages/medlemslogin/bolt-solid.svg" alt="" class="attImgs" />
+                  <span class="attName">Agility</span>
+                  <span id="attValue-4" class="attValue-4 attributeValues" contenteditable="true"></span>
+                </div>
+              </div>
             </div>
           </div>
         </section>
         <section class="section-8">
           <div class="article-box">
             <div class="article-box-bg">
-              <div class="article-title">Dec 8 2021</div>
-              <div class="article-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, sed molestias? Nisi ut repudiandae animi recusandae quam facere veniam, quia natus consequuntur vero sit eum.</div>
-            </div>
-          </div>
-        </section>
-        <section class="section-9">
-          <div class="article-box">
-            <div class="article-box-bg">
-              <div class="article-title">Dec 9 2021</div>
-              <div class="article-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, sed molestias? Nisi ut repudiandae animi recusandae quam facere veniam, quia natus consequuntur vero sit eum.</div>
-            </div>
-          </div>
-        </section>
-        <section class="section-10">
-          <div class="article-box">
-            <div class="article-box-bg">
-              <div class="article-title">Dec 10 2021</div>
-              <div class="article-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, sed molestias? Nisi ut repudiandae animi recusandae quam facere veniam, quia natus consequuntur vero sit eum.</div>
-            </div>
-          </div>
-        </section>
-        <section class="section-11">
-          <div class="article-box">
-            <div class="article-box-bg">
-              <div class="article-title">Dec 11 2021</div>
-              <div class="article-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, sed molestias? Nisi ut repudiandae animi recusandae quam facere veniam, quia natus consequuntur vero sit eum.</div>
-            </div>
-          </div>
-        </section>
-        <section class="section-12">
-          <div class="article-box">
-            <div class="article-box-bg">
-              <div class="article-title">Dec 12 2021</div>
-              <div class="article-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, sed molestias? Nisi ut repudiandae animi recusandae quam facere veniam, quia natus consequuntur vero sit eum.</div>
-            </div>
-          </div>
-        </section>
-        <section class="section-13">
-          <div class="article-box">
-            <div class="article-box-bg">
-              <div class="article-title">Dec 13 2021</div>
-              <div class="article-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, sed molestias? Nisi ut repudiandae animi recusandae quam facere veniam, quia natus consequuntur vero sit eum.</div>
-            </div>
-          </div>
-        </section>
-        <section class="section-14">
-          <div class="article-box">
-            <div class="article-box-bg">
-              <div class="article-title">Dec 14 2021</div>
-              <div class="article-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, sed molestias? Nisi ut repudiandae animi recusandae quam facere veniam, quia natus consequuntur vero sit eum.</div>
-            </div>
-          </div>
-        </section>
-        <section class="section-15">
-          <div class="article-box">
-            <div class="article-box-bg">
-              <div class="article-title">Dec 15 2021</div>
-              <div class="article-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, sed molestias? Nisi ut repudiandae animi recusandae quam facere veniam, quia natus consequuntur vero sit eum.</div>
-            </div>
-          </div>
-        </section>
-        <section class="section-16">
-          <div class="article-box">
-            <div class="article-box-bg">
-              <div class="article-title">Dec 16 2021</div>
-              <div class="article-content">Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum, sed molestias? Nisi ut repudiandae animi recusandae quam facere veniam, quia natus consequuntur vero sit eum.</div>
+              <div class="article-title"></div>
+              <div class="article-content medlemsContent">
+                <div class="att-1 attributes">
+                  <img src="../assets/subpages/medlemslogin/fist-raised-solid.svg" alt="" class="attImgs" />
+                  <span class="attName">Styrke</span>
+                  <span id="attValue-1" class="attValue-1 attributeValues" contenteditable="true"></span>
+                </div>
+                <div class="att-2 attributes">
+                  <img src="../assets/subpages/medlemslogin/heartbeat-solid.svg" alt="" class="attImgs" />
+                  <span class="attName">Vitalitet</span>
+                  <span id="attValue-2" class="attValue-2 attributeValues" contenteditable="true"></span>
+                </div>
+                <div class="att-3 attributes">
+                  <img src="../assets/subpages/medlemslogin/shield-alt-solid.svg" alt="" class="attImgs" />
+                  <span class="attName">Forsvar</span>
+                  <span id="attValue-3" class="attValue-3 attributeValues" contenteditable="true"></span>
+                </div>
+                <div class="att-4 attributes">
+                  <img src="../assets/subpages/medlemslogin/bolt-solid.svg" alt="" class="attImgs" />
+                  <span class="attName">Agility</span>
+                  <span id="attValue-4" class="attValue-4 attributeValues" contenteditable="true"></span>
+                </div>
+              </div>
             </div>
           </div>
         </section>
