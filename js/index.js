@@ -24,6 +24,7 @@ let townLinks = document.getElementsByClassName("townLinks"),
   flag7 = document.querySelector("#flag-7"),
   logoMain = document.querySelector("#logoMain"),
   compass = document.querySelector("#compass"),
+  pathStart = document.querySelector("#pathStart"),
   scrollPrompt = document.querySelector("#scrollPrompt");
 // skip intro vars
 let skipBtn = document.querySelector("#skipBtn"),
@@ -33,7 +34,8 @@ let wheelTimer,
   pathPositionStart = 0,
   pathPosition,
   pathDir,
-  pathLive;
+  pathLive,
+  pathMarkAnim;
 // page referrers
 let lastPage = document.referrer,
   lastPageFormat = lastPage.includes("/pages/");
@@ -42,6 +44,7 @@ let lastPage = document.referrer,
 
 // cinematic intro timeline with return statements fired by the 'skipIntro' function
 function intro() {
+  document.body.style.background = "radial-gradient(circle, #252f33 0%, #1a1c1a 69%)";
   // start audio
   setTimeout(function () {
     theShire.play();
@@ -96,6 +99,8 @@ function intro() {
       return;
     } else {
       skipBtn.classList.add("xyz-out");
+      pathStart.classList.add("xyz-in");
+      pathStart.style.display = "block";
       scrollPrompt.classList.add("xyz-in");
       scrollPrompt.style.display = "block";
       compass.classList.add("xyz-in");
@@ -129,6 +134,8 @@ function skipIntro() {
   }
   logoMain.classList.add("xyz-in");
   logoMain.style.display = "block";
+  pathStart.classList.add("xyz-in");
+  pathStart.style.display = "block";
   scrollPrompt.classList.add("xyz-in");
   scrollPrompt.style.display = "block";
   setTimeout(function () {
@@ -142,12 +149,14 @@ function skipIntro() {
 function landingFrom() {
   if (lastPageFormat === true) {
     skipIntro();
+    logoMain.classList = "";
+    logoMain.display = "block";
   } else {
     intro();
   }
 }
 
-// page transition
+/// page transition
 window.transPage = function (href) {
   document.querySelector("body").style.opacity = 0;
   setTimeout(function () {
@@ -165,6 +174,7 @@ window.addEventListener(
   function (e) {
     let deltaYdata = e.deltaY;
     let wheelDir;
+    pathMarkAnim = KUTE.fromTo("#mapMark", { path: "#mapMark" }, { path: "#sign" }, { duration: 500, yoyo: 3 });
 
     clearTimeout(wheelTimer);
     wheelTimer = setTimeout(function () {
@@ -184,7 +194,7 @@ window.addEventListener(
         case "0go":
           KUTE.to("#pathLine", { opacity: 1 }).start();
           KUTE.fromTo("#pathLine", { draw: "0% 0%" }, { draw: "0% 9%" }, { duration: 1000 }).start();
-          //KUTE.fromTo("#sign", { path: "#sign" }, { path: "#mapMark" }, { duration: 500 }).start();
+          pathMarkAnim.stop();
           setTimeout(function () {
             town1.classList.add("townLinksActive");
             KUTE.to("#flag-1", { opacity: 1 }, { duration: 350 }).start();
@@ -195,7 +205,7 @@ window.addEventListener(
           KUTE.to("#flag-1", { opacity: 0 }, { duration: 100 }).start();
           town1.classList.remove("townLinksActive");
           setTimeout(function () {
-            KUTE.fromTo("#mapMark", { path: "#mapMark" }, { path: "#sign" }, { duration: 500 }).start();
+            pathMarkAnim.start();
           }, 1000);
           setTimeout(function () {
             KUTE.to("#pathStart", {
