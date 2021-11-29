@@ -520,8 +520,10 @@ body {
   border-radius: 5px;
 }
 .arrangement .section-wrapper section.main p.subtitle {
+  font-weight: 700;
   color: #f2f2f2;
   font-size: 2.5rem;
+  background-color: #33333380;
 }
 .arrangement .section-wrapper .article-box {
   width: 45vw;
@@ -771,13 +773,15 @@ body {
   position: absolute;
   content: "";
   inset: 0;
-  background-color: rgba(51, 51, 51, 0.5);
+  background-color: #33333380;
   z-index: -1;
   border-radius: 5px;
 }
 .bliv-medlem .section-wrapper section.main p.subtitle {
+  font-weight: 700;
   color: #f2f2f2;
   font-size: 2.5rem;
+  background-color: #33333380;
 }
 .bliv-medlem .section-wrapper section.section-1, .bliv-medlem .section-wrapper section.section-2, .bliv-medlem .section-wrapper section.section-3, .bliv-medlem .section-wrapper section.section-4 {
   position: relative;
@@ -1031,8 +1035,10 @@ body {
   border-radius: 5px;
 }
 .foraeldre-info .section-wrapper section.main p.subtitle {
-  color: #333;
+  font-weight: 700;
+  color: #f2f2f2;
   font-size: 2.5rem;
+  background-color: #33333380;
 }
 .foraeldre-info .section-wrapper .article-box {
   width: 45vw;
@@ -1265,10 +1271,13 @@ body {
   font-size: 10rem;
   letter-spacing: 0.3em;
   text-transform: uppercase;
+  background-color: #33333380;
 }
 .medlemslogin .section-wrapper section.main p.subtitle {
+  font-weight: 700;
   color: #f2f2f2;
   font-size: 2.5rem;
+  background-color: #33333380;
 }
 .medlemslogin .section-wrapper .article-box {
   width: 45vw;
@@ -1668,8 +1677,10 @@ body {
   border-radius: 5px;
 }
 .nyheder .section-wrapper section.main p.subtitle {
+  font-weight: 700;
   color: #f2f2f2;
   font-size: 2.5rem;
+  background-color: #33333380;
 }
 .nyheder .section-wrapper .article-box {
   width: 45vw;
@@ -1855,8 +1866,10 @@ body {
   border-radius: 5px;
 }
 .kontakt .section-wrapper section.main p.subtitle {
+  font-weight: 700;
   color: #f2f2f2;
   font-size: 2.5rem;
+  background-color: #33333380;
 }
 .kontakt .section-wrapper section.section-1, .kontakt .section-wrapper section.section-2, .kontakt .section-wrapper section.section-3, .kontakt .section-wrapper section.section-4 {
   position: relative;
@@ -2123,8 +2136,10 @@ body {
   border-radius: 5px;
 }
 .galleri .section-wrapper section.main p.subtitle {
+  font-weight: 700;
   color: #f2f2f2;
   font-size: 2.5rem;
+  background-color: #33333380;
 }
 .galleri .section-wrapper .article-box {
   width: 45vw;

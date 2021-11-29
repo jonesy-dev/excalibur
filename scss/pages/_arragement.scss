@@ -207,8 +207,10 @@ body {
         }
 
         p.subtitle {
+          font-weight: 700;
           color: #f2f2f2;
           font-size: 2.5rem;
+          background-color: #33333380;
         }
       }
     }
@@ -274,7 +276,7 @@ body {
             margin-left: 1.2em;
 
             &::marker {
-              content: '⚔️';
+              content: "⚔️";
             }
           }
 

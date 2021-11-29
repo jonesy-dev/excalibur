@@ -150,7 +150,6 @@ body {
         left: 45px;
         top: 175px;
       }
-
     }
 
     .bg-img-right {
@@ -169,7 +168,6 @@ body {
         left: 45px;
         top: 175px;
       }
-
     }
 
     section {
@@ -191,11 +189,11 @@ body {
           font-size: 10rem;
           letter-spacing: 0.3em;
           isolation: isolate;
-          padding-left: .4em;
+          padding-left: 0.4em;
 
           &::after {
             position: absolute;
-            content: '';
+            content: "";
             inset: 0;
             background-color: rgba(51, 51, 51, 0.5);
             z-index: -1;
@@ -204,8 +202,10 @@ body {
         }
 
         p.subtitle {
+          font-weight: 700;
           color: #f2f2f2;
           font-size: 2.5rem;
+          background-color: #33333380;
         }
       }
     }
